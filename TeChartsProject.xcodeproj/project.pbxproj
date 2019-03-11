@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		570231A322364AC7008E7C34 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570231A222364AC7008E7C34 /* Types.swift */; };
+		570231A622366053008E7C34 /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570231A522366053008E7C34 /* UIColor+extensions.swift */; };
+		57DD350822356ECA001A48CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DD350722356ECA001A48CB /* AppDelegate.swift */; };
+		57DD350A22356ECA001A48CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DD350922356ECA001A48CB /* ViewController.swift */; };
+		57DD350D22356ECA001A48CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DD350B22356ECA001A48CB /* Main.storyboard */; };
+		57DD350F22356ECC001A48CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57DD350E22356ECC001A48CB /* Assets.xcassets */; };
+		57DD351222356ECC001A48CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DD351022356ECC001A48CB /* LaunchScreen.storyboard */; };
+		57DD351A22357297001A48CB /* Data.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57DD351922357297001A48CB /* Data.xcassets */; };
+		57DD353D22359568001A48CB /* ChartLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 57DD353B22359568001A48CB /* ChartLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		57DD354022359568001A48CB /* ChartLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57DD353922359568001A48CB /* ChartLib.framework */; };
+		57DD354122359568001A48CB /* ChartLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57DD353922359568001A48CB /* ChartLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		57DD354622359583001A48CB /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DD354522359583001A48CB /* ChartView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		57DD353E22359568001A48CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 57DD34FC22356ECA001A48CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 57DD353822359568001A48CB;
+			remoteInfo = ChartLib;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		57DD352F22357834001A48CB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				57DD354122359568001A48CB /* ChartLib.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		570231A222364AC7008E7C34 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		570231A522366053008E7C34 /* UIColor+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extensions.swift"; sourceTree = "<group>"; };
+		57DD350422356ECA001A48CB /* TeChartsProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeChartsProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		57DD350722356ECA001A48CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		57DD350922356ECA001A48CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		57DD350C22356ECA001A48CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		57DD350E22356ECC001A48CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		57DD351122356ECC001A48CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		57DD351322356ECC001A48CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57DD351922357297001A48CB /* Data.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Data.xcassets; sourceTree = "<group>"; };
+		57DD353922359568001A48CB /* ChartLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChartLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57DD353B22359568001A48CB /* ChartLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChartLib.h; sourceTree = "<group>"; };
+		57DD353C22359568001A48CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57DD354522359583001A48CB /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		57DD350122356ECA001A48CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57DD354022359568001A48CB /* ChartLib.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57DD353622359568001A48CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		570231A422366043008E7C34 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				570231A72236605E008E7C34 /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		570231A72236605E008E7C34 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				570231A522366053008E7C34 /* UIColor+extensions.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		57DD34FB22356ECA001A48CB = {
+			isa = PBXGroup;
+			children = (
+				57DD350622356ECA001A48CB /* TeChartsProject */,
+				57DD353A22359568001A48CB /* ChartLib */,
+				57DD350522356ECA001A48CB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		57DD350522356ECA001A48CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				57DD350422356ECA001A48CB /* TeChartsProject.app */,
+				57DD353922359568001A48CB /* ChartLib.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		57DD350622356ECA001A48CB /* TeChartsProject */ = {
+			isa = PBXGroup;
+			children = (
+				57DD350722356ECA001A48CB /* AppDelegate.swift */,
+				57DD351D223572D8001A48CB /* ViewControllers */,
+				57DD351B223572A2001A48CB /* Assets */,
+				57DD351C223572BF001A48CB /* Supporting FIles */,
+			);
+			path = TeChartsProject;
+			sourceTree = "<group>";
+		};
+		57DD351B223572A2001A48CB /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				57DD350E22356ECC001A48CB /* Assets.xcassets */,
+				57DD351922357297001A48CB /* Data.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		57DD351C223572BF001A48CB /* Supporting FIles */ = {
+			isa = PBXGroup;
+			children = (
+				57DD351022356ECC001A48CB /* LaunchScreen.storyboard */,
+				57DD351322356ECC001A48CB /* Info.plist */,
+			);
+			path = "Supporting FIles";
+			sourceTree = "<group>";
+		};
+		57DD351D223572D8001A48CB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				57DD350922356ECA001A48CB /* ViewController.swift */,
+				57DD350B22356ECA001A48CB /* Main.storyboard */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		57DD353A22359568001A48CB /* ChartLib */ = {
+			isa = PBXGroup;
+			children = (
+				570231A422366043008E7C34 /* Extensions */,
+				570231A222364AC7008E7C34 /* Types.swift */,
+				57DD354522359583001A48CB /* ChartView.swift */,
+				57DD353B22359568001A48CB /* ChartLib.h */,
+				57DD353C22359568001A48CB /* Info.plist */,
+			);
+			path = ChartLib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		57DD353422359568001A48CB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57DD353D22359568001A48CB /* ChartLib.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		57DD350322356ECA001A48CB /* TeChartsProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57DD351622356ECC001A48CB /* Build configuration list for PBXNativeTarget "TeChartsProject" */;
+			buildPhases = (
+				57DD350022356ECA001A48CB /* Sources */,
+				57DD350122356ECA001A48CB /* Frameworks */,
+				57DD350222356ECA001A48CB /* Resources */,
+				57DD352F22357834001A48CB /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				57DD353F22359568001A48CB /* PBXTargetDependency */,
+			);
+			name = TeChartsProject;
+			productName = TeChartsProject;
+			productReference = 57DD350422356ECA001A48CB /* TeChartsProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+		57DD353822359568001A48CB /* ChartLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57DD354222359568001A48CB /* Build configuration list for PBXNativeTarget "ChartLib" */;
+			buildPhases = (
+				57DD353422359568001A48CB /* Headers */,
+				57DD353522359568001A48CB /* Sources */,
+				57DD353622359568001A48CB /* Frameworks */,
+				57DD353722359568001A48CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChartLib;
+			productName = ChartLib;
+			productReference = 57DD353922359568001A48CB /* ChartLib.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		57DD34FC22356ECA001A48CB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Andriy Chuprina";
+				TargetAttributes = {
+					57DD350322356ECA001A48CB = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					57DD353822359568001A48CB = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+					};
+				};
+			};
+			buildConfigurationList = 57DD34FF22356ECA001A48CB /* Build configuration list for PBXProject "TeChartsProject" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 57DD34FB22356ECA001A48CB;
+			productRefGroup = 57DD350522356ECA001A48CB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				57DD350322356ECA001A48CB /* TeChartsProject */,
+				57DD353822359568001A48CB /* ChartLib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		57DD350222356ECA001A48CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57DD351222356ECC001A48CB /* LaunchScreen.storyboard in Resources */,
+				57DD350F22356ECC001A48CB /* Assets.xcassets in Resources */,
+				57DD350D22356ECA001A48CB /* Main.storyboard in Resources */,
+				57DD351A22357297001A48CB /* Data.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57DD353722359568001A48CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		57DD350022356ECA001A48CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57DD350A22356ECA001A48CB /* ViewController.swift in Sources */,
+				57DD350822356ECA001A48CB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57DD353522359568001A48CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57DD354622359583001A48CB /* ChartView.swift in Sources */,
+				570231A322364AC7008E7C34 /* Types.swift in Sources */,
+				570231A622366053008E7C34 /* UIColor+extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		57DD353F22359568001A48CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 57DD353822359568001A48CB /* ChartLib */;
+			targetProxy = 57DD353E22359568001A48CB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		57DD350B22356ECA001A48CB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				57DD350C22356ECA001A48CB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		57DD351022356ECC001A48CB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				57DD351122356ECC001A48CB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		57DD351422356ECC001A48CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		57DD351522356ECC001A48CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		57DD351722356ECC001A48CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "TeChartsProject/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.chuprina.TeChartsProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		57DD351822356ECC001A48CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "TeChartsProject/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.chuprina.TeChartsProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		57DD354322359568001A48CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ChartLib/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.chuprina.ChartLib;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		57DD354422359568001A48CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ChartLib/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.chuprina.ChartLib;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		57DD34FF22356ECA001A48CB /* Build configuration list for PBXProject "TeChartsProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57DD351422356ECC001A48CB /* Debug */,
+				57DD351522356ECC001A48CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		57DD351622356ECC001A48CB /* Build configuration list for PBXNativeTarget "TeChartsProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57DD351722356ECC001A48CB /* Debug */,
+				57DD351822356ECC001A48CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		57DD354222359568001A48CB /* Build configuration list for PBXNativeTarget "ChartLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57DD354322359568001A48CB /* Debug */,
+				57DD354422359568001A48CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 57DD34FC22356ECA001A48CB /* Project object */;
+}
