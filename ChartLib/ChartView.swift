@@ -117,12 +117,12 @@ public class ChartContentView: UIView {
         ctx?.saveGState()
         
         let textLayer = CATextLayer()
-        textLayer.frame = CGRect(x: 0, y: 0, width: 90, height: 20)
+        textLayer.frame = CGRect(x: 20, y: 20, width: 90, height: 20)
         textLayer.font = UIFont.systemFont(ofSize: 14.0)
         textLayer.fontSize = 14
         textLayer.foregroundColor = UIColor.green.cgColor
         textLayer.string = "Test string"
-        ctx?.move(to: CGPoint(x: 50, y: 50))
+//        ctx?.move(to: CGPoint(x: 50, y: 50))
         textLayer.render(in: ctx!)
 //        let str = NSAttributedString(string: "Test string", attributes: [.font : UIFont.systemFont(ofSize: 14), .foregroundColor: UIColor.green])
 //        str.draw(at: CGPoint(x: 20, y: 20))
