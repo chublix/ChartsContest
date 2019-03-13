@@ -35,7 +35,7 @@ public class ChartView: UIScrollView {
         addSubview(contentView)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -55,7 +55,7 @@ public class ChartContentView: UIView {
 //        layer.transform = CATransform3DMakeRotation(.pi, 1, 0, 0)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -66,7 +66,7 @@ public class ChartContentView: UIView {
         ctx?.setLineWidth(0.5)
         ctx?.setShadow(offset: .zero, blur: 0.0)
         ctx?.beginPath()
-        for i in 1...5 {
+        for i in 1...6 {
             let offset = CGFloat(i) * step
             ctx?.move(to:CGPoint(x: 0, y: offset))
             ctx?.addLine(to: CGPoint(x: bounds.width, y: offset))
@@ -115,27 +115,14 @@ public class ChartContentView: UIView {
 
     private func drawText(ctx: CGContext?) {
         ctx?.saveGState()
-        
-        let textLayer = CATextLayer()
-        textLayer.frame = CGRect(x: 20, y: 20, width: 90, height: 20)
-        textLayer.font = UIFont.systemFont(ofSize: 14.0)
-        textLayer.fontSize = 14
-        textLayer.foregroundColor = UIColor.green.cgColor
-        textLayer.string = "Test string"
-//        ctx?.move(to: CGPoint(x: 50, y: 50))
-        textLayer.render(in: ctx!)
-//        let str = NSAttributedString(string: "Test string", attributes: [.font : UIFont.systemFont(ofSize: 14), .foregroundColor: UIColor.green])
-//        str.draw(at: CGPoint(x: 20, y: 20))
-        
+        let str = NSAttributedString(string: "Test string", attributes: [.font : UIFont.systemFont(ofSize: 14), .foregroundColor: UIColor.green])
+        str.draw(at: CGPoint(x: 20, y: 20))
         ctx?.restoreGState()
     }
 
     public override func draw(_ rect: CGRect) {
         super.draw(rect)
         let ctx = UIGraphicsGetCurrentContext()
-//        ctx?.clear(rect)
-//        ctx?.setFillColor(UIColor.lightGray.cgColor)
-//        ctx?.fill(rect)
         drawBackground(ctx: ctx)
         drawChart(ctx: ctx)
         drawCircles(ctx: ctx)
