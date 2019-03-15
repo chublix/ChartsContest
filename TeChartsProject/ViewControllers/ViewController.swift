@@ -14,137 +14,72 @@ struct Point: Decodable {
     let y: CGFloat
 }
 
+
+struct RawChartItem: Decodable {
+    let columns: [[Value]]
+    let types: [String: String]
+    let names: [String: String]
+    let colors: [String: String]
+}
+
+enum Value: Decodable {
+    case string(String)
+    case int(Int)
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        guard let value = ((try? container.decode(String.self)).map(Value.string))
+            .or((try? container.decode(Int.self)).map(Value.int))
+            else {
+                throw DecodingError.typeMismatch(Value.self, DecodingError.Context(codingPath: container.codingPath, debugDescription: "Not a JSON"))
+        }
+        self = value
+    }
+}
+
+extension Optional {
+    func or(_ other: Optional) -> Optional {
+        switch self {
+        case .none: return other
+        case .some: return self
+        }
+    }
+}
+
 class ViewController: UIViewController {
 
-    private var scrollLayer: CAScrollLayer!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        drawChartView()
-//        drawLayer()
-        drawScroll()
+        drawChartView()
+    }
+    
+    private func createChartItems(data: Data) -> [ChartItem] {
+        guard let rawItems = try? JSONDecoder().decode([RawChartItem].self, from: data) else { return [] }
+        return rawItems.map { (item) -> ChartItem in
+            let columns = item.columns.map { column -> ChartColumn? in
+                guard let id = column.first else { return nil }
+                guard let typeID = item.types[id as String], let type = ChartColumn.ColumnType(rawValue: typeID) else { return nil }
+                let values = column.compactMap { Int($0) }
+                let color = UIColor(hex: item.colors[id])
+                return ChartColumn(name: item.names[id], values: values, type: type, color: color)
+            }
+            return ChartItem(columns: columns.compactMap { $0 })
+        }
     }
     
     private func drawChartView() {
-        var points: [CGPoint] = []
-        let url = Bundle.main.url(forResource: "points1", withExtension: "json")
-        if let data = try? Data(contentsOf: url!), let result = try? JSONDecoder().decode([Point].self, from: data) {
-            points = result.map { CGPoint(x: $0.x, y: $0.y) }
-        }
-        
+        let url = Bundle.main.url(forResource: "chart_data", withExtension: "json")
+        guard let data = try? Data(contentsOf: url!) else { return }
+        let items = createChartItems(data: data)
+        debugPrint(items)
         let width = view.bounds.width - 20
         let chartView = ChartView(frame: CGRect(x: 10, y: 50, width: width, height: width * 0.66))
-        chartView.points = points
-        chartView.backgroundColor = UIColor(hex: 0xf1f1f1)
+//        chartView.points = points
         view.addSubview(chartView)
     }
     
-    private func drawLayer() {
-        
-        let rawPoints: [(CGFloat, CGFloat)] = [
-            (10,10), (25, 55), (32, 85), (57, 45), (68, 65), (85, 120),
-            (95, 150), (108,115), (125, 160), (135, 180), (155, 173), (170, 110), (178, 115),
-            (190, 150), (203,135), (215, 80), (230, 88), (250, 123), (260, 130), (272, 125),
-            (280, 135), (290,40), (300, 75)
-        ]
-        let points = rawPoints.map { CGPoint(x: $0.0, y: $0.1) }
-        
-        let width = view.bounds.width - 20
-        let background = CALayer()
-        background.frame = CGRect(x: 10, y: 300, width: width, height: width * 0.666)
-        background.backgroundColor = UIColor.lightGray.cgColor
-        
-        let chartLayer = CAShapeLayer()
-        chartLayer.frame = background.bounds
-        chartLayer.strokeColor = UIColor.yellow.cgColor
-        chartLayer.lineWidth = 2
-        chartLayer.fillColor = UIColor.clear.cgColor
-        
-        let bezierPath = UIBezierPath()
-        bezierPath.move(to: .zero)
-        points.forEach { point in
-            bezierPath.addLine(to: point)
-        }
-        chartLayer.path = bezierPath.cgPath
-        
-        let pointsLayer = CAShapeLayer()
-        pointsLayer.frame = background.bounds
-        pointsLayer.strokeColor = UIColor.green.cgColor
-        pointsLayer.lineWidth = 1
-        pointsLayer.fillColor = UIColor.green.cgColor
-        
-        let pointBezierPath = UIBezierPath()
-        pointBezierPath.move(to: .zero)
-        points.forEach { point in
-            pointBezierPath.move(to: point)
-            pointBezierPath.addArc(withCenter: point, radius: 2.5, startAngle: 0, endAngle: .pi * 2.0, clockwise: true)
-        }
-        pointsLayer.path = pointBezierPath.cgPath
-        
-        view.layer.addSublayer(background)
-        background.addSublayer(chartLayer)
-        background.addSublayer(pointsLayer)
-    }
-    
-    private func drawScroll() {
-        let width = view.bounds.width - 20
-//        let scrollView = UIScrollView(frame: CGRect(x: 10, y: 300, width: width, height: width * 0.666))
-//        let size = CGSize(width: width * 10, height: scrollView.frame.height)
-//        scrollView.contentSize = size
-        
-        scrollLayer = CAScrollLayer()
-        scrollLayer.frame = CGRect(x: 10, y: 300, width: width, height: width * 0.666)
-        scrollLayer.contentsRect = CGRect(x: 0, y: 0, width: 2400, height: width * 0.666)
-        scrollLayer.backgroundColor = UIColor.lightGray.cgColor
-        
-//        let contentView = UIView(frame: CGRect(origin: .zero, size: size))
-        
-//        view.addSubview(scrollView)
-//        scrollView.addSubview(contentView)
-        
-        var points: [CGPoint] = []
-        let url = Bundle.main.url(forResource: "points1", withExtension: "json")
-        if let data = try? Data(contentsOf: url!), let result = try? JSONDecoder().decode([Point].self, from: data) {
-            points = result.map { CGPoint(x: $0.x, y: $0.y) }
-        }
-        
-        let chartLayer = CAShapeLayer()
-        chartLayer.frame = scrollLayer.contentsRect//contentView.bounds
-        chartLayer.strokeColor = UIColor.yellow.cgColor
-        chartLayer.lineWidth = 1
-        chartLayer.fillColor = UIColor.clear.cgColor
-        
-        let bezierPath = UIBezierPath()
-        bezierPath.move(to: points[0])
-        points.forEach { point in
-            bezierPath.addLine(to: point)
-        }
-        chartLayer.path = bezierPath.cgPath
-        
-        let pointsLayer = CAShapeLayer()
-        pointsLayer.frame = chartLayer.frame
-        pointsLayer.strokeColor = UIColor.green.cgColor
-        pointsLayer.lineWidth = 1
-        pointsLayer.fillColor = UIColor.green.cgColor
-        
-        let pointBezierPath = UIBezierPath()
-        pointBezierPath.move(to: .zero)
-        points.forEach { point in
-            pointBezierPath.move(to: point)
-            pointBezierPath.addArc(withCenter: point, radius: 2.5, startAngle: 0, endAngle: .pi * 2.0, clockwise: true)
-        }
-        pointsLayer.path = pointBezierPath.cgPath
-        
-        scrollLayer.addSublayer(chartLayer)
-        scrollLayer.addSublayer(pointsLayer)
-        view.layer.addSublayer(scrollLayer)
-//        contentView.layer.addSublayer(chartLayer)
-//        contentView.layer.addSublayer(pointsLayer)
-    }
     
     @IBAction private func sliderValueChanged(_ sender: UISlider) {
-        let offset = sender.value * 3000
-        scrollLayer.scroll(to: CGPoint(x: CGFloat(offset), y: 0))
+
     }
 
 }

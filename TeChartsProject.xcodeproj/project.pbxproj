@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		570231A322364AC7008E7C34 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570231A222364AC7008E7C34 /* Types.swift */; };
 		570231A622366053008E7C34 /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570231A522366053008E7C34 /* UIColor+extensions.swift */; };
+		570463C8223BB24200E8E81E /* chart_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 570463C7223BB24200E8E81E /* chart_data.json */; };
 		57DD350822356ECA001A48CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DD350722356ECA001A48CB /* AppDelegate.swift */; };
 		57DD350A22356ECA001A48CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DD350922356ECA001A48CB /* ViewController.swift */; };
 		57DD350D22356ECA001A48CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DD350B22356ECA001A48CB /* Main.storyboard */; };
 		57DD350F22356ECC001A48CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57DD350E22356ECC001A48CB /* Assets.xcassets */; };
 		57DD351222356ECC001A48CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DD351022356ECC001A48CB /* LaunchScreen.storyboard */; };
-		57DD351A22357297001A48CB /* Data.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57DD351922357297001A48CB /* Data.xcassets */; };
 		57DD353D22359568001A48CB /* ChartLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 57DD353B22359568001A48CB /* ChartLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		57DD354022359568001A48CB /* ChartLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57DD353922359568001A48CB /* ChartLib.framework */; };
 		57DD354122359568001A48CB /* ChartLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57DD353922359568001A48CB /* ChartLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -50,6 +50,7 @@
 /* Begin PBXFileReference section */
 		570231A222364AC7008E7C34 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		570231A522366053008E7C34 /* UIColor+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extensions.swift"; sourceTree = "<group>"; };
+		570463C7223BB24200E8E81E /* chart_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chart_data.json; sourceTree = "<group>"; };
 		57DD350422356ECA001A48CB /* TeChartsProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeChartsProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57DD350722356ECA001A48CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57DD350922356ECA001A48CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,7 +58,6 @@
 		57DD350E22356ECC001A48CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57DD351122356ECC001A48CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57DD351322356ECC001A48CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		57DD351922357297001A48CB /* Data.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Data.xcassets; sourceTree = "<group>"; };
 		57DD353922359568001A48CB /* ChartLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChartLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57DD353B22359568001A48CB /* ChartLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChartLib.h; sourceTree = "<group>"; };
 		57DD353C22359568001A48CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -133,10 +133,10 @@
 		57DD351B223572A2001A48CB /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				570463C7223BB24200E8E81E /* chart_data.json */,
 				57E3DE462237F07500E43EEB /* points1.json */,
 				57E3DE432237EB3100E43EEB /* points.json */,
 				57DD350E22356ECC001A48CB /* Assets.xcassets */,
-				57DD351922357297001A48CB /* Data.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -272,10 +272,10 @@
 			files = (
 				57E3DE472237F07500E43EEB /* points1.json in Resources */,
 				57DD351222356ECC001A48CB /* LaunchScreen.storyboard in Resources */,
+				570463C8223BB24200E8E81E /* chart_data.json in Resources */,
 				57DD350F22356ECC001A48CB /* Assets.xcassets in Resources */,
 				57DD350D22356ECA001A48CB /* Main.storyboard in Resources */,
 				57E3DE452237ECF500E43EEB /* points.json in Resources */,
-				57DD351A22357297001A48CB /* Data.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
