@@ -9,11 +9,6 @@
 import UIKit
 import ChartLib
 
-struct Point: Decodable {
-    let x: CGFloat
-    let y: CGFloat
-}
-
 
 struct RawChartItem: Decodable {
     let columns: [[Value]]
@@ -22,19 +17,6 @@ struct RawChartItem: Decodable {
     let colors: [String: String]
 }
 
-//enum Value: Decodable {
-//    case string(String)
-//    case int(Int)
-//    init(from decoder: Decoder) throws {
-//        let container = try decoder.singleValueContainer()
-//        guard let value = ((try? container.decode(String.self)).map(Value.string))
-//            .or((try? container.decode(Int.self)).map(Value.int))
-//            else {
-//                throw DecodingError.typeMismatch(Value.self, DecodingError.Context(codingPath: container.codingPath, debugDescription: "Not a JSON"))
-//        }
-//        self = value
-//    }
-//}
 
 struct Value: Decodable {
     let string: String?
@@ -47,14 +29,6 @@ struct Value: Decodable {
     }
 }
 
-//extension Optional {
-//    func or(_ other: Optional) -> Optional {
-//        switch self {
-//        case .none: return other
-//        case .some: return self
-//        }
-//    }
-//}
 
 class ViewController: UIViewController {
 
