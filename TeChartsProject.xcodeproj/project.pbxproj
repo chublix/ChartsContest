@@ -11,6 +11,7 @@
 		570231A622366053008E7C34 /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570231A522366053008E7C34 /* UIColor+extensions.swift */; };
 		570463C8223BB24200E8E81E /* chart_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 570463C7223BB24200E8E81E /* chart_data.json */; };
 		57C27A35223E81D200B8D6E8 /* BackgroundLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C27A34223E81D200B8D6E8 /* BackgroundLayer.swift */; };
+		57C744FC2241295400683DCA /* ChartTextsLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C744FB2241295400683DCA /* ChartTextsLayer.swift */; };
 		57DD350822356ECA001A48CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DD350722356ECA001A48CB /* AppDelegate.swift */; };
 		57DD350A22356ECA001A48CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DD350922356ECA001A48CB /* ViewController.swift */; };
 		57DD350D22356ECA001A48CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DD350B22356ECA001A48CB /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		570231A522366053008E7C34 /* UIColor+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extensions.swift"; sourceTree = "<group>"; };
 		570463C7223BB24200E8E81E /* chart_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chart_data.json; sourceTree = "<group>"; };
 		57C27A34223E81D200B8D6E8 /* BackgroundLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundLayer.swift; sourceTree = "<group>"; };
+		57C744FB2241295400683DCA /* ChartTextsLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTextsLayer.swift; sourceTree = "<group>"; };
 		57DD350422356ECA001A48CB /* TeChartsProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeChartsProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57DD350722356ECA001A48CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57DD350922356ECA001A48CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				57C27A34223E81D200B8D6E8 /* BackgroundLayer.swift */,
+				57C744FB2241295400683DCA /* ChartTextsLayer.swift */,
 			);
 			path = Sublayers;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57C744FC2241295400683DCA /* ChartTextsLayer.swift in Sources */,
 				57DD354622359583001A48CB /* ChartView.swift in Sources */,
 				57C27A35223E81D200B8D6E8 /* BackgroundLayer.swift in Sources */,
 				570231A322364AC7008E7C34 /* Types.swift in Sources */,

@@ -6,7 +6,6 @@
 //  Copyright © 2019 Andriy Chuprina. All rights reserved.
 //
 
-import UIKit
 
 internal class BackgroundLayer: CALayer {
 
