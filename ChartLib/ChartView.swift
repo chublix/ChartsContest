@@ -23,13 +23,13 @@ public class ChartView: UIView {
         return layer
     }()
     
-    private lazy var chartsLayer: CALayer = {
+    private lazy var chartsContainerLayer: CALayer = {
         let layer = CALayer()
         layer.transform = CATransform3DMakeRotation(.pi, 1, 0, 0)
         return layer
     }()
     
-    private var axisLayers: [CALayer] = []
+    private lazy var backgroundLayer: BackgroundLayer = BackgroundLayer()
     
     private var chartsSubLayers: [CALayer] = []
     
@@ -40,14 +40,11 @@ public class ChartView: UIView {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         layer.addSublayer(contentLayer)
-        contentLayer.backgroundColor = UIColor.lightGray.cgColor
-        setupAxis()
-        axisLayers.forEach { contentLayer.addSublayer($0) }
-        
-        contentLayer.addSublayer(chartsLayer)
-        chartsLayer.backgroundColor = UIColor.clear.cgColor
-        
-        
+        contentLayer.backgroundColor = UIColor.clear.cgColor
+        backgroundLayer.backgroundColor = UIColor.lightGray.cgColor
+        contentLayer.addSublayer(backgroundLayer)
+        contentLayer.addSublayer(chartsContainerLayer)
+        chartsContainerLayer.backgroundColor = UIColor.clear.cgColor
         
         redraw()
     }
@@ -56,24 +53,14 @@ public class ChartView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupAxis() {
-        let step = bounds.height / 6
-        for i in 1...5 {
-            let offset = CGFloat(i) * step
-            let layer = CALayer()
-            layer.frame = CGRect(x: 0, y: offset, width: bounds.width, height: 1)
-            layer.backgroundColor = UIColor.white.cgColor
-            axisLayers.append(layer)
-        }
-    }
-    
     private func redraw() {
         let rect = layer.bounds
         contentLayer.frame = rect
         contentLayer.contentsRect = rect
         contentLayer.contentsRect.size.width = rect.width * 7
         
-        chartsLayer.frame = contentLayer.contentsRect
+        chartsContainerLayer.frame = contentLayer.contentsRect
+        backgroundLayer.frame = contentLayer.contentsRect
     }
 
 }
