@@ -19,20 +19,29 @@ internal class ChartTextsLayer: CALayer {
     
     var color: UIColor?
     
-    var axis: Axis = .y
+    var axis: Axis = .vertical
     
     private var textLayers: [CATextLayer]? {
         get { return sublayers as? [CATextLayer] }
         set { sublayers = textLayers }
     }
     
+    override init() {
+        super.init()
+        update()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private func createSublayers() -> [CATextLayer] {
-        let step = (axis == .y ? bounds.height : bounds.width) / CGFloat(strings.count)
+        let step = (axis == .vertical ? bounds.height : bounds.width) / CGFloat(strings.count)
         return (0..<strings.count).map { (index) -> CATextLayer in
             let layer = CATextLayer()
-            layer.alignmentMode = axis == .y ? .left : .center
+            layer.alignmentMode = axis == .vertical ? .left : .center
             let offset = step * CGFloat(index)
-            if axis == .y {
+            if axis == .vertical {
                 layer.frame = CGRect(x: 0, y: offset, width: bounds.width, height: step)
             } else {
                 layer.frame = CGRect(x: offset, y: 0, width: step, height: bounds.height)
@@ -42,7 +51,7 @@ internal class ChartTextsLayer: CALayer {
     }
     
     private func update() {
-        if sublayers?.count != strings.count {
+        if textLayers?.count != strings.count {
             textLayers = createSublayers()
         }
         textLayers?.enumerated().forEach { (index, layer) in
@@ -57,8 +66,8 @@ internal class ChartTextsLayer: CALayer {
 extension ChartTextsLayer {
     
     enum Axis {
-        case x
-        case y
+        case horizontal
+        case vertical
     }
     
 }

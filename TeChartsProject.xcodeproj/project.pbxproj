@@ -10,6 +10,11 @@
 		570231A322364AC7008E7C34 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570231A222364AC7008E7C34 /* Types.swift */; };
 		570231A622366053008E7C34 /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570231A522366053008E7C34 /* UIColor+extensions.swift */; };
 		570463C8223BB24200E8E81E /* chart_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 570463C7223BB24200E8E81E /* chart_data.json */; };
+		57BFB0422242D81A0093D026 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFB0412242D81A0093D026 /* ChartViewController.swift */; };
+		57BFB0462242D83E0093D026 /* AxisTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFB0442242D83E0093D026 /* AxisTextCollectionViewCell.swift */; };
+		57BFB0472242D83E0093D026 /* AxisTextCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57BFB0452242D83E0093D026 /* AxisTextCollectionViewCell.xib */; };
+		57BFB04A2242D9640093D026 /* XAxisCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFB0492242D9640093D026 /* XAxisCollectionViewDataSource.swift */; };
+		57BFB04C2242D9710093D026 /* YAxisCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFB04B2242D9710093D026 /* YAxisCollectionViewDataSource.swift */; };
 		57C27A35223E81D200B8D6E8 /* BackgroundLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C27A34223E81D200B8D6E8 /* BackgroundLayer.swift */; };
 		57C744FC2241295400683DCA /* ChartTextsLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C744FB2241295400683DCA /* ChartTextsLayer.swift */; };
 		57DD350822356ECA001A48CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DD350722356ECA001A48CB /* AppDelegate.swift */; };
@@ -53,6 +58,11 @@
 		570231A222364AC7008E7C34 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		570231A522366053008E7C34 /* UIColor+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extensions.swift"; sourceTree = "<group>"; };
 		570463C7223BB24200E8E81E /* chart_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chart_data.json; sourceTree = "<group>"; };
+		57BFB0412242D81A0093D026 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		57BFB0442242D83E0093D026 /* AxisTextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisTextCollectionViewCell.swift; sourceTree = "<group>"; };
+		57BFB0452242D83E0093D026 /* AxisTextCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AxisTextCollectionViewCell.xib; sourceTree = "<group>"; };
+		57BFB0492242D9640093D026 /* XAxisCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAxisCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		57BFB04B2242D9710093D026 /* YAxisCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YAxisCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		57C27A34223E81D200B8D6E8 /* BackgroundLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundLayer.swift; sourceTree = "<group>"; };
 		57C744FB2241295400683DCA /* ChartTextsLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTextsLayer.swift; sourceTree = "<group>"; };
 		57DD350422356ECA001A48CB /* TeChartsProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeChartsProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +113,34 @@
 				570231A522366053008E7C34 /* UIColor+extensions.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		57BFB0402242D7FD0093D026 /* ChartViewController */ = {
+			isa = PBXGroup;
+			children = (
+				57BFB0432242D81F0093D026 /* Cells */,
+				57BFB0482242D9190093D026 /* DataSources */,
+				57BFB0412242D81A0093D026 /* ChartViewController.swift */,
+			);
+			path = ChartViewController;
+			sourceTree = "<group>";
+		};
+		57BFB0432242D81F0093D026 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				57BFB0442242D83E0093D026 /* AxisTextCollectionViewCell.swift */,
+				57BFB0452242D83E0093D026 /* AxisTextCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		57BFB0482242D9190093D026 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				57BFB0492242D9640093D026 /* XAxisCollectionViewDataSource.swift */,
+				57BFB04B2242D9710093D026 /* YAxisCollectionViewDataSource.swift */,
+			);
+			path = DataSources;
 			sourceTree = "<group>";
 		};
 		57C27A33223E81AF00B8D6E8 /* Sublayers */ = {
@@ -166,6 +204,7 @@
 		57DD351D223572D8001A48CB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				57BFB0402242D7FD0093D026 /* ChartViewController */,
 				57DD350922356ECA001A48CB /* ViewController.swift */,
 				57DD350B22356ECA001A48CB /* Main.storyboard */,
 			);
@@ -289,6 +328,7 @@
 				570463C8223BB24200E8E81E /* chart_data.json in Resources */,
 				57DD350F22356ECC001A48CB /* Assets.xcassets in Resources */,
 				57DD350D22356ECA001A48CB /* Main.storyboard in Resources */,
+				57BFB0472242D83E0093D026 /* AxisTextCollectionViewCell.xib in Resources */,
 				57E3DE452237ECF500E43EEB /* points.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,8 +347,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57BFB0462242D83E0093D026 /* AxisTextCollectionViewCell.swift in Sources */,
 				57DD350A22356ECA001A48CB /* ViewController.swift in Sources */,
+				57BFB04A2242D9640093D026 /* XAxisCollectionViewDataSource.swift in Sources */,
 				57DD350822356ECA001A48CB /* AppDelegate.swift in Sources */,
+				57BFB04C2242D9710093D026 /* YAxisCollectionViewDataSource.swift in Sources */,
+				57BFB0422242D81A0093D026 /* ChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
