@@ -9,24 +9,7 @@
 import UIKit
 
 
-struct RawChartItem: Decodable {
-    let columns: [[Value]]
-    let types: [String: String]
-    let names: [String: String]
-    let colors: [String: String]
-}
 
-
-struct Value: Decodable {
-    let string: String?
-    let int: Int?
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        self.string = try? container.decode(String.self)
-        self.int = try? container.decode(Int.self)
-    }
-}
 
 
 class ViewController: UIViewController {
@@ -36,18 +19,20 @@ class ViewController: UIViewController {
 
     }
     
-    private func createChartItems(data: Data) -> [ChartItem] {
-        guard let rawItems = try? JSONDecoder().decode([RawChartItem].self, from: data) else { return [] }
-        return rawItems.map { (item) -> ChartItem in
-            let columns = item.columns.map { column -> ChartColumn? in
-                guard let id = column.first?.string else { return nil }
-                guard let typeID = item.types[id], let type = ChartColumn.ColumnType(rawValue: typeID) else { return nil }
+    private func loadCharts(from data: Data) -> ChartsContainer? {
+        guard let rawItems = try? JSONDecoder().decode([JsonChartItem].self, from: data) else { return nil }
+        let charts = rawItems.map { (item) -> Chart in
+            let lines = item.columns.compactMap { column -> Line? in
+                guard let id = column.first?.string, let name = item.names[id] else { return nil }
+                guard let color = UIColor(hex: item.colors[id]) else { return nil }
+//                guard let typeID = item.types[id], AxisType(rawValue: typeID) == .line else { return nil }
                 let values = column.compactMap { $0.int }
-                let color = UIColor(hex: item.colors[id])
-                return ChartColumn(name: item.names[id], values: values, type: type, color: color)
+                return Line(name: name, values: values, color: color)
             }
-            return ChartItem(columns: columns.compactMap { $0 })
+            let xAxisValues = item.columns.first { $0.first?.string == "x" }?.compactMap { $0.int } ?? []
+            return Chart(lines: lines, x: xAxisValues)
         }
+        return ChartsContainer(charts: charts)
     }
     
 //    private func drawChartView() {
