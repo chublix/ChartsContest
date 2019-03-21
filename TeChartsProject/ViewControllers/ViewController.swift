@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ChartLib
 
 
 struct RawChartItem: Decodable {
@@ -34,7 +33,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        drawChartView()
+
     }
     
     private func createChartItems(data: Data) -> [ChartItem] {
@@ -51,16 +50,11 @@ class ViewController: UIViewController {
         }
     }
     
-    private func drawChartView() {
-        let url = Bundle.main.url(forResource: "chart_data", withExtension: "json")
-        guard let data = try? Data(contentsOf: url!) else { return }
-        let items = createChartItems(data: data)
-        debugPrint(items)
-        let width = view.bounds.width - 20
-        let chartView = ChartView(frame: CGRect(x: 10, y: 50, width: width, height: width * 0.66))
-//        chartView.points = points
-        view.addSubview(chartView)
-    }
+//    private func drawChartView() {
+//        let url = Bundle.main.url(forResource: "chart_data", withExtension: "json")
+//        guard let data = try? Data(contentsOf: url!) else { return }
+//        let items = createChartItems(data: data)
+//    }
     
     
     @IBAction private func sliderValueChanged(_ sender: UISlider) {

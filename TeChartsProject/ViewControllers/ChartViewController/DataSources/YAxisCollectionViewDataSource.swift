@@ -42,7 +42,7 @@ extension YAxisCollectionViewDataSource: UICollectionViewDataSource {
 extension YAxisCollectionViewDataSource: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        (cell as? AxisTextCollectionViewCell)?.setup(with: titles[indexPath.item], textAligment: .center)
+        (cell as? AxisTextCollectionViewCell)?.setup(with: titles[indexPath.item], textAligment: .left)
     }
     
 }
@@ -53,6 +53,14 @@ extension YAxisCollectionViewDataSource: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = collectionView.bounds.height / CGFloat(titles.count)
         return CGSize(width: collectionView.bounds.width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
     
 }

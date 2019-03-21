@@ -21,6 +21,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BP3-Ij-xcb">
+                                <rect key="frame" x="0.0" y="283.5" width="375" height="260"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="260" id="1jv-Mz-ynm"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="TM3-55-Pid" kind="embed" id="5KM-Fk-R0C"/>
+                                </connections>
+                            </containerView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tUw-HZ-3CE">
                                 <rect key="frame" x="14" y="630" width="347" height="30"/>
                                 <constraints>
@@ -36,6 +45,9 @@
                             <constraint firstItem="tUw-HZ-3CE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="49f-bo-gf7"/>
                             <constraint firstAttribute="trailing" secondItem="tUw-HZ-3CE" secondAttribute="trailing" constant="16" id="GSi-lE-Emx"/>
                             <constraint firstItem="axi-ed-D8B" firstAttribute="top" secondItem="tUw-HZ-3CE" secondAttribute="bottom" constant="8" id="KG7-xx-OKz"/>
+                            <constraint firstAttribute="trailing" secondItem="BP3-Ij-xcb" secondAttribute="trailing" id="ZmX-rF-4Ha"/>
+                            <constraint firstItem="BP3-Ij-xcb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="80" id="hEK-DJ-OMZ"/>
+                            <constraint firstItem="BP3-Ij-xcb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lM8-ew-PWt"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -43,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Chart View Controller-->
         <scene sceneID="gtf-Cs-CYi">
             <objects>
-                <viewController id="TM3-55-Pid" sceneMemberID="viewController">
+                <viewController id="TM3-55-Pid" customClass="ChartViewController" customModule="TeChartsProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UTp-Ev-gG2"/>
                         <viewControllerLayoutGuide type="bottom" id="Hvo-98-N2U"/>
@@ -56,31 +68,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oOx-W9-yFv">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="248"/>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ykg-bS-8HS">
                                 <rect key="frame" x="0.0" y="248" width="375" height="32"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="VFe-Th-6H8"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Pr6-Kw-iSE">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Pr6-Kw-iSE">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="K69-c3-UMq">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="dTi-4X-ofb" id="M5n-kB-n9E"/>
                                     <outlet property="delegate" destination="dTi-4X-ofb" id="Zx6-Ik-Pc6"/>
@@ -88,7 +90,7 @@
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KLf-8C-R1N">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="248"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="Zkj-Qu-fJw"/>
                                 </constraints>
@@ -98,16 +100,7 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qbA-dL-Fpq">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="bIy-Hb-M3H" id="kld-rF-uB9"/>
                                     <outlet property="delegate" destination="bIy-Hb-M3H" id="fFu-Ai-8pI"/>
@@ -119,8 +112,8 @@
                             <constraint firstItem="ykg-bS-8HS" firstAttribute="top" secondItem="KLf-8C-R1N" secondAttribute="bottom" id="0i7-0Q-pYs"/>
                             <constraint firstItem="Hvo-98-N2U" firstAttribute="top" secondItem="ykg-bS-8HS" secondAttribute="bottom" id="1Ao-YD-anC"/>
                             <constraint firstAttribute="trailing" secondItem="ykg-bS-8HS" secondAttribute="trailing" id="2EG-vp-sOG"/>
+                            <constraint firstItem="ykg-bS-8HS" firstAttribute="top" secondItem="oOx-W9-yFv" secondAttribute="bottom" id="6Ys-wS-8LC"/>
                             <constraint firstItem="oOx-W9-yFv" firstAttribute="leading" secondItem="TFs-ZU-Euz" secondAttribute="leading" id="AYG-af-2aa"/>
-                            <constraint firstItem="Hvo-98-N2U" firstAttribute="top" secondItem="oOx-W9-yFv" secondAttribute="bottom" id="ZKM-7o-Qa1"/>
                             <constraint firstAttribute="trailing" secondItem="oOx-W9-yFv" secondAttribute="trailing" id="bKo-NM-z7g"/>
                             <constraint firstItem="ykg-bS-8HS" firstAttribute="leading" secondItem="TFs-ZU-Euz" secondAttribute="leading" id="hbm-U0-yzU"/>
                             <constraint firstItem="oOx-W9-yFv" firstAttribute="top" secondItem="UTp-Ev-gG2" secondAttribute="bottom" id="oIg-mH-CDh"/>
@@ -130,6 +123,13 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="280"/>
+                    <connections>
+                        <outlet property="contentView" destination="oOx-W9-yFv" id="Pf0-41-3Uv"/>
+                        <outlet property="xAxisCollectionView" destination="ykg-bS-8HS" id="Jpb-ss-Enm"/>
+                        <outlet property="xAxisDataSource" destination="dTi-4X-ofb" id="0PS-On-PuK"/>
+                        <outlet property="yAxisCollectionView" destination="KLf-8C-R1N" id="egU-71-Cqm"/>
+                        <outlet property="yAxisDataSource" destination="bIy-Hb-M3H" id="y0a-nM-qbb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUS-S6-CI0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="dTi-4X-ofb" userLabel="X Axis Collection View Data Source" customClass="XAxisCollectionViewDataSource" customModule="TeChartsProject" customModuleProvider="target">
@@ -143,7 +143,7 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="1618" y="-27"/>
+            <point key="canvasLocation" x="1616.8" y="-27.886056971514247"/>
         </scene>
     </scenes>
 </document>

@@ -6,16 +6,17 @@
 //  Copyright © 2019 Andriy Chuprina. All rights reserved.
 //
 
+import UIKit
 
-internal class BackgroundLayer: CALayer {
+public class BackgroundLayer: CALayer {
 
-    var linesCount: Int = 4
-    var linesColor: UIColor = .white {
+    public var linesCount: Int = 4
+    public var linesColor: UIColor = .white {
         didSet {
             linesLayer.strokeColor = linesColor.cgColor
         }
     }
-    var linesWidth: CGFloat = 1.0 {
+    public var linesWidth: CGFloat = 1.0 {
         didSet {
             linesLayer.lineWidth = linesWidth
         }
@@ -23,7 +24,7 @@ internal class BackgroundLayer: CALayer {
     
     private var linesLayer: CAShapeLayer!
     
-    override var frame: CGRect {
+    public override var frame: CGRect {
         get { return super.frame }
         set {
             super.frame = newValue
@@ -31,7 +32,7 @@ internal class BackgroundLayer: CALayer {
         }
     }
     
-    override init() {
+    public override init() {
         super.init()
         linesLayer = CAShapeLayer()
         addSublayer(linesLayer)
@@ -45,7 +46,7 @@ internal class BackgroundLayer: CALayer {
         linesLayer.frame = bounds
         linesLayer.strokeColor = linesColor.cgColor
         linesLayer.lineWidth = linesWidth
-        let step = bounds.height / CGFloat(linesCount + 1)
+        let step = bounds.height / CGFloat(linesCount)
         let bezierPath = UIBezierPath()
         for i in 1...linesCount {
             let offset = CGFloat(i) * step
