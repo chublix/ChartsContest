@@ -11,7 +11,7 @@ import UIKit
 
 struct ChartsContainer {
     
-    let charts: [Chart]
+    var charts: [Chart]
     
     init(charts: [Chart]) {
         self.charts = charts
@@ -21,19 +21,18 @@ struct ChartsContainer {
 
 struct Chart {
     var lines: [Line]
-    var x: [Int]
+    let x: [Int]
 }
 
 
-public struct Line {
+struct Line {
     
-    public let name: String
+    let name: String
+    let values: [Int]
+    let color: UIColor
+    var enabled: Bool = true
     
-    public let values: [Int]
-    
-    public let color: UIColor
-    
-    public init(name: String, values: [Int], color: UIColor) {
+    init(name: String, values: [Int], color: UIColor) {
         self.name = name
         self.values = values
         self.color = color

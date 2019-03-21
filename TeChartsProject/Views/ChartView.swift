@@ -33,20 +33,22 @@ class ChartView: UIView {
         set { layer.sublayers = newValue }
     }
     
-    private func createSubLayers() -> [CAShapeLayer]? {
-        return chartsData?.lines.map { _ in
-            return CAShapeLayer()
+    private func createSubLayers(for lines: [Line]?) -> [CAShapeLayer]? {
+        return lines?.map { _ -> CAShapeLayer in
+            let shape = CAShapeLayer()
+            shape.fillColor = UIColor.clear.cgColor
+            return shape
         }
     }
     
     private func point(from values: (x: Int, y: Int)) -> CGPoint {
         let x: CGFloat = ((CGFloat(values.x - firstX)) * bounds.width) / CGFloat(lastX - firstX)
-        let y: CGFloat = (CGFloat(values.y) * bounds.height) / CGFloat(greatestY)
+        let y: CGFloat = (bounds.height - (CGFloat(values.y) * bounds.height) / CGFloat(greatestY))
         return CGPoint(x: x, y: y)
     }
     
-    private func updateChartSublayers() {
-        zip(chartsSublayers ?? [], chartsData?.lines ?? []).forEach { (item) in
+    private func updateChartSublayers(for lines: [Line]?) {
+        zip(chartsSublayers ?? [], lines ?? []).forEach { (item) in
             let (layer, line) = item
             layer.lineWidth = lineWidth
             layer.strokeColor = line.color.cgColor
@@ -68,15 +70,15 @@ class ChartView: UIView {
     }
     
     private func update() {
-        
-        greatestY = chartsData?.lines.map { $0.values }.flatMap { $0 }.max() ?? 0
+        let lines = chartsData?.lines.filter { $0.enabled }
+        greatestY = lines?.map { $0.values }.flatMap { $0 }.max() ?? 0
         firstX = chartsData?.x.first ?? 0
         lastX = chartsData?.x.last ?? 0
         
-        if chartsSublayers?.count != chartsData?.lines.count {
-            chartsSublayers = createSubLayers()
+        if chartsSublayers?.count != lines?.count {
+            chartsSublayers = createSubLayers(for: lines)
         }
-        updateChartSublayers()
+        updateChartSublayers(for: lines)
     }
     
 }
