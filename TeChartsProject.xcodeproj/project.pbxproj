@@ -19,12 +19,13 @@
 		57BFB04A2242D9640093D026 /* XAxisCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFB0492242D9640093D026 /* XAxisCollectionViewDataSource.swift */; };
 		57BFB04C2242D9710093D026 /* YAxisCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFB04B2242D9710093D026 /* YAxisCollectionViewDataSource.swift */; };
 		57DD350822356ECA001A48CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DD350722356ECA001A48CB /* AppDelegate.swift */; };
-		57DD350A22356ECA001A48CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DD350922356ECA001A48CB /* ViewController.swift */; };
+		57DD350A22356ECA001A48CB /* ChartContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DD350922356ECA001A48CB /* ChartContainerViewController.swift */; };
 		57DD350D22356ECA001A48CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DD350B22356ECA001A48CB /* Main.storyboard */; };
 		57DD350F22356ECC001A48CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57DD350E22356ECC001A48CB /* Assets.xcassets */; };
 		57DD351222356ECC001A48CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DD351022356ECC001A48CB /* LaunchScreen.storyboard */; };
 		57E3DE452237ECF500E43EEB /* points.json in Resources */ = {isa = PBXBuildFile; fileRef = 57E3DE432237EB3100E43EEB /* points.json */; };
 		57E3DE472237F07500E43EEB /* points1.json in Resources */ = {isa = PBXBuildFile; fileRef = 57E3DE462237F07500E43EEB /* points1.json */; };
+		AB8B2AD72244BC8900F15D58 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B2AD62244BC8900F15D58 /* StartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -54,13 +55,14 @@
 		57C27A34223E81D200B8D6E8 /* BackgroundLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundLayer.swift; sourceTree = "<group>"; };
 		57DD350422356ECA001A48CB /* TeChartsProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeChartsProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57DD350722356ECA001A48CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		57DD350922356ECA001A48CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		57DD350922356ECA001A48CB /* ChartContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartContainerViewController.swift; sourceTree = "<group>"; };
 		57DD350C22356ECA001A48CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57DD350E22356ECC001A48CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57DD351122356ECC001A48CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57DD351322356ECC001A48CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57E3DE432237EB3100E43EEB /* points.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = points.json; sourceTree = "<group>"; };
 		57E3DE462237F07500E43EEB /* points1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = points1.json; sourceTree = "<group>"; };
+		AB8B2AD62244BC8900F15D58 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,7 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				57BFB0402242D7FD0093D026 /* ChartViewController */,
-				57DD350922356ECA001A48CB /* ViewController.swift */,
+				57DD350922356ECA001A48CB /* ChartContainerViewController.swift */,
+				AB8B2AD62244BC8900F15D58 /* StartViewController.swift */,
 				57DD350B22356ECA001A48CB /* Main.storyboard */,
 			);
 			path = ViewControllers;
@@ -270,10 +273,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				57BFB0462242D83E0093D026 /* AxisTextCollectionViewCell.swift in Sources */,
-				57DD350A22356ECA001A48CB /* ViewController.swift in Sources */,
+				57DD350A22356ECA001A48CB /* ChartContainerViewController.swift in Sources */,
 				57331AB0224397C900D52844 /* ChartView.swift in Sources */,
 				57BFB04A2242D9640093D026 /* XAxisCollectionViewDataSource.swift in Sources */,
 				57331AB52243D68B00D52844 /* JsonModels.swift in Sources */,
+				AB8B2AD72244BC8900F15D58 /* StartViewController.swift in Sources */,
 				57331AAD2243932B00D52844 /* ChartModels.swift in Sources */,
 				57DD350822356ECA001A48CB /* AppDelegate.swift in Sources */,
 				57331AAE2243933500D52844 /* UIColor+extensions.swift in Sources */,

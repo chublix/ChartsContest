@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oHa-1x-wkH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,69 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Charts-->
+        <scene sceneID="ejB-h8-V6t">
+            <objects>
+                <viewController id="Eh6-dO-kQL" customClass="StartViewController" customModule="TeChartsProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rCH-Vw-wBC"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Ak-9d-XIs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5FJ-L7-SuV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ezT-6o-BC8">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" textLabel="oVy-Qa-8NY" style="IBUITableViewCellStyleDefault" id="LDu-Z8-x8O">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LDu-Z8-x8O" id="AJT-Ii-pq9">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oVy-Qa-8NY">
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Eh6-dO-kQL" id="Dm7-4G-Qr0"/>
+                                    <outlet property="delegate" destination="Eh6-dO-kQL" id="Yp3-hh-Gfz"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8Ak-9d-XIs" firstAttribute="top" secondItem="ezT-6o-BC8" secondAttribute="bottom" id="6kD-4s-Vb3"/>
+                            <constraint firstAttribute="trailing" secondItem="ezT-6o-BC8" secondAttribute="trailing" id="WmN-5g-kgD"/>
+                            <constraint firstItem="ezT-6o-BC8" firstAttribute="top" secondItem="rCH-Vw-wBC" secondAttribute="bottom" id="ZsI-gn-Gao"/>
+                            <constraint firstItem="ezT-6o-BC8" firstAttribute="leading" secondItem="5FJ-L7-SuV" secondAttribute="leading" id="bbr-Rt-IoE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Charts" id="ZoV-Fk-Tmm"/>
+                    <connections>
+                        <outlet property="tableView" destination="ezT-6o-BC8" id="khA-pZ-Sxc"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="showChart" id="gIK-va-a1O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kKg-kL-phJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="200.80000000000001" y="125.4872563718141"/>
+        </scene>
+        <!--Chart Container View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TeChartsProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ChartContainerViewController" customModule="TeChartsProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8Jt-X1-6Ck"/>
                         <viewControllerLayoutGuide type="bottom" id="axi-ed-D8B"/>
@@ -75,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1071" y="125"/>
         </scene>
         <!--Chart View Controller-->
         <scene sceneID="gtf-Cs-CYi">
@@ -165,7 +224,25 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="1616.8" y="-27.886056971514247"/>
+            <point key="canvasLocation" x="2556" y="-27.886056971514247"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BDR-DJ-7Ow">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oHa-1x-wkH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bUw-mf-5aD">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Eh6-dO-kQL" kind="relationship" relationship="rootViewController" id="RoY-hV-3h7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jig-8P-vQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-738.39999999999998" y="124.58770614692655"/>
         </scene>
     </scenes>
 </document>
