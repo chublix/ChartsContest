@@ -11,10 +11,12 @@ import UIKit
 
 class ChartContainerViewController: UIViewController {
 
-    @IBOutlet private weak var sliderContentView: UIView!
-    
-    private weak var chartViewController: ChartViewController!
-    private weak var chartView: ChartView!
+    private weak var chartViewController: ChartViewController! {
+        didSet { chartViewController.chart = chart }
+    }
+    private weak var chartSliderViewController: ChartSliderViewController! {
+        didSet { chartSliderViewController.chart = chart }
+    }
     
     var chart: Chart?
     
@@ -24,27 +26,18 @@ class ChartContainerViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        setup()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? ChartViewController {
-            vc.chart = chart
             chartViewController = vc
+        } else if let vc = segue.destination as? ChartSliderViewController {
+            chartSliderViewController = vc
         }
     }
     
-    private func setup() {
-        let chartView = ChartView(frame: sliderContentView.bounds)
-        chartView.lineWidth = 1
-        chartView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
-        chartView.chartsData = chart
-        sliderContentView.addSubview(chartView)
-        self.chartView = chartView
-    }
-    
     @IBAction private func disableChart(_ sender: UIButton) {
-        chartView.chartsData?.lines[0].enabled.toggle()
+        chartSliderViewController.chart.lines[0].enabled.toggle()
         chartViewController.chart?.lines[0].enabled.toggle()
     }
     

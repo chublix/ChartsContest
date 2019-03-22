@@ -13,6 +13,7 @@
 		57331AAE2243933500D52844 /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570231A522366053008E7C34 /* UIColor+extensions.swift */; };
 		57331AB0224397C900D52844 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57331AAF224397C900D52844 /* ChartView.swift */; };
 		57331AB52243D68B00D52844 /* JsonModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57331AB42243D68B00D52844 /* JsonModels.swift */; };
+		579D940B22450DC500FD9692 /* ChartSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579D940A22450DC500FD9692 /* ChartSliderViewController.swift */; };
 		57BFB0422242D81A0093D026 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFB0412242D81A0093D026 /* ChartViewController.swift */; };
 		57BFB0462242D83E0093D026 /* AxisTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFB0442242D83E0093D026 /* AxisTextCollectionViewCell.swift */; };
 		57BFB0472242D83E0093D026 /* AxisTextCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57BFB0452242D83E0093D026 /* AxisTextCollectionViewCell.xib */; };
@@ -47,6 +48,7 @@
 		570463C7223BB24200E8E81E /* chart_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chart_data.json; sourceTree = "<group>"; };
 		57331AAF224397C900D52844 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		57331AB42243D68B00D52844 /* JsonModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonModels.swift; sourceTree = "<group>"; };
+		579D940A22450DC500FD9692 /* ChartSliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartSliderViewController.swift; sourceTree = "<group>"; };
 		57BFB0412242D81A0093D026 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		57BFB0442242D83E0093D026 /* AxisTextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisTextCollectionViewCell.swift; sourceTree = "<group>"; };
 		57BFB0452242D83E0093D026 /* AxisTextCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AxisTextCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				57BFB0432242D81F0093D026 /* Cells */,
 				57BFB0482242D9190093D026 /* DataSources */,
 				57BFB0412242D81A0093D026 /* ChartViewController.swift */,
+				579D940A22450DC500FD9692 /* ChartSliderViewController.swift */,
 			);
 			path = ChartViewController;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				57331AAE2243933500D52844 /* UIColor+extensions.swift in Sources */,
 				57BFB04C2242D9710093D026 /* YAxisCollectionViewDataSource.swift in Sources */,
 				57331AAC2243931300D52844 /* BackgroundLayer.swift in Sources */,
+				579D940B22450DC500FD9692 /* ChartSliderViewController.swift in Sources */,
 				57BFB0422242D81A0093D026 /* ChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

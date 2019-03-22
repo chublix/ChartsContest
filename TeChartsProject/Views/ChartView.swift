@@ -16,12 +16,14 @@ class ChartView: UIView {
         }
     }
     
-    var lineWidth: CGFloat = 0
+    @IBInspectable var lineWidth: CGFloat = 0
     
     override var frame: CGRect {
-        didSet {
-            update()
-        }
+        didSet { update() }
+    }
+    
+    override var bounds: CGRect {
+        didSet { update() }
     }
     
     private var firstX: Int = 0
