@@ -8,15 +8,32 @@
 
 import UIKit
 
+protocol ChartSliderViewControllerDelegate: class {
+    
+    func chartSliderViewController(_ controller: ChartSliderViewController,  changedMin min: Float, changedMax max: Float)
+    
+}
+
+
 class ChartSliderViewController: UIViewController {
 
     @IBOutlet private weak var chartView: ChartView!
     @IBOutlet private var thumbView: UIView!
     
+    private var maskLayer: CAShapeLayer!
+    
     private var currentThumbOffset: CGFloat = 0
     private var fragment: Fragment? = nil
+    private var minimumWidth: CGFloat = 0
     
-    var value: Float = 0
+    weak var delegate: ChartSliderViewControllerDelegate?
+    
+    var minValue: Float = 0
+    var maxValue: Float = 0
+    var thumbWidth: CGFloat = 0.2 {
+        didSet { minimumWidth = thumbWidth * view.bounds.width }
+    }
+    
     
     var chart: Chart! {
         didSet { chartView?.chartsData = chart }
@@ -25,21 +42,58 @@ class ChartSliderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         chartView.chartsData = chart
-        setupThumbs()
+        setup()
     }
     
-    private func setupThumbs() {
+    override func updateViewConstraints() {
+        super.updateViewConstraints()
+        updateFrames()
+    }
+    
+    private func setup() {
+        maskLayer = CAShapeLayer()
+        maskLayer.fillColor = UIColor.lightGray.cgColor
+        maskLayer.fillRule = CAShapeLayerFillRule.evenOdd
+        maskLayer.opacity = 0.7
+        view.layer.addSublayer(maskLayer)
         view.addSubview(thumbView)
-        thumbView.frame = CGRect(x: 100, y: 0, width: 80, height: 44)
+    }
+    
+    private func updateFrames() {
+        minimumWidth = thumbWidth * view.bounds.width
+        maskLayer.frame = view.bounds
+        thumbView.frame = CGRect(x: 0, y: 0, width: minimumWidth, height: view.bounds.height)
+        updateMaskLayerPath()
+    }
+    
+    private func updateMaskLayerPath() {
+        let path = UIBezierPath(
+            roundedRect: view.bounds,
+            cornerRadius: 0
+        )
+        let holePath = UIBezierPath(
+            roundedRect: thumbView.frame,
+            cornerRadius: 0
+        )
+        
+        path.append(holePath)
+        path.usesEvenOddFillRule = true
+        maskLayer.path = path.cgPath
+    }
+    
+    private func updateSelectedRangeValues() {
+        minValue = Float(thumbView.frame.minX / view.bounds.width)
+        maxValue = Float(thumbView.frame.maxX / view.bounds.width)
+        delegate?.chartSliderViewController(self, changedMin: minValue, changedMax: maxValue)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
         if let touchView = touch.view, touchView == thumbView {
             let point = touch.location(in: touchView)
-            if point.x < 24 {
+            if point.x < 20 {
                 fragment = .left
-            } else if point.x > (thumbView.bounds.width - 24) {
+            } else if point.x > (thumbView.bounds.width - 20) {
                 fragment = .right
             } else {
                 fragment = .center
@@ -68,11 +122,13 @@ class ChartSliderViewController: UIViewController {
             thumbView.frame.size.width = step
         }
         
-        thumbView.frame.size.width = thumbView.frame.size.width < 80 ? 80 : thumbView.frame.size.width
+        thumbView.frame.size.width = thumbView.frame.size.width < minimumWidth ? minimumWidth : thumbView.frame.size.width
         
         if fragment != .right {
             thumbView.frame.origin.x = x
         }
+        updateMaskLayerPath()
+        updateSelectedRangeValues()
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -15,7 +15,10 @@ class ChartContainerViewController: UIViewController {
         didSet { chartViewController.chart = chart }
     }
     private weak var chartSliderViewController: ChartSliderViewController! {
-        didSet { chartSliderViewController.chart = chart }
+        didSet {
+            chartSliderViewController.delegate = self
+            chartSliderViewController.chart = chart
+        }
     }
     
     var chart: Chart?
@@ -47,3 +50,11 @@ class ChartContainerViewController: UIViewController {
 
 }
 
+
+extension ChartContainerViewController: ChartSliderViewControllerDelegate {
+    
+    func chartSliderViewController(_ controller: ChartSliderViewController, changedMin min: Float, changedMax max: Float) {
+        debugPrint("min: \(min); max: \(max)")
+    }
+    
+}
