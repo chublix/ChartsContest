@@ -18,8 +18,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="158" height="65"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fA6-QK-W2T">
-                        <rect key="frame" x="0.0" y="0.0" width="158" height="65"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fA6-QK-W2T">
+                        <rect key="frame" x="0.0" y="48" width="158" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -30,14 +30,14 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="fA6-QK-W2T" secondAttribute="trailing" id="0bH-dy-MoP"/>
                 <constraint firstAttribute="bottom" secondItem="fA6-QK-W2T" secondAttribute="bottom" id="KNc-Xc-EP1"/>
-                <constraint firstItem="fA6-QK-W2T" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Mph-uz-IhR"/>
+                <constraint firstItem="fA6-QK-W2T" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="top" id="Mph-uz-IhR"/>
                 <constraint firstItem="fA6-QK-W2T" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mbA-ln-IAD"/>
             </constraints>
             <size key="customSize" width="158" height="65"/>
             <connections>
                 <outlet property="titleLabel" destination="fA6-QK-W2T" id="Tzq-Ng-aWy"/>
             </connections>
-            <point key="canvasLocation" x="219.19999999999999" y="153.37331334332833"/>
+            <point key="canvasLocation" x="219.19999999999999" y="152.47376311844079"/>
         </collectionViewCell>
     </objects>
 </document>
