@@ -13,7 +13,7 @@ class ChartViewController: UIViewController {
     @IBOutlet private weak var xAxisCollectionView: UICollectionView!
     @IBOutlet private weak var yAxisCollectionView: UICollectionView!
     
-    @IBOutlet private weak var backgroundView: UIView!
+    @IBOutlet private weak var backgroundView: BackgroundView!
     @IBOutlet private weak var chartViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet private weak var chartView: ChartView!
     @IBOutlet private weak var scrollView: UIScrollView!
@@ -55,16 +55,6 @@ class ChartViewController: UIViewController {
         chartView.chartsData = chart
         updateXAxisLabels()
         updateYAxisLabels()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        let backgroundLayer = BackgroundLayer()
-        backgroundLayer.backgroundColor = UIColor.clear.cgColor
-        backgroundLayer.linesColor = UIColor.lightGray
-        backgroundLayer.linesCount = 6
-        backgroundLayer.frame = scrollView.frame
-        backgroundView.layer.addSublayer(backgroundLayer)
     }
     
     override func updateViewConstraints() {
