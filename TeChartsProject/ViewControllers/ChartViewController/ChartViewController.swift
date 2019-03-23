@@ -25,6 +25,7 @@ class ChartViewController: UIViewController {
         didSet {
             let x = CGFloat(offset) * scrollView.contentSize.width
             scrollView.setContentOffset(CGPoint(x: x, y: 0), animated: false)
+            updateXAxisLabels()
         }
     }
     
@@ -39,6 +40,7 @@ class ChartViewController: UIViewController {
         didSet {
             chartView?.chartsData = chart
             updateYAxisLabels()
+            updateXAxisLabels()
         }
     }
     
@@ -71,7 +73,12 @@ class ChartViewController: UIViewController {
     }
     
     private func updateXAxisLabels() {
-        xAxisDataSource.titles = ["feb 4", "feb 7", "feb 10", "feb 13"]
+        let count = CGFloat(chart?.x.count ?? 0)
+        let step = count / CGFloat(scale * 5)
+        let start = CGFloat(offset) * count
+        let list = (0...4).map { CGFloat($0) * step + start }.map { chart?.x[Int($0)] }.compactMap { $0 }
+        let titles = list.map { dateFormatter.string(from: Date(timeIntervalSince1970: Double($0) / 1000)) }
+        xAxisDataSource.titles = titles
     }
     
     private func updateYAxisLabels() {

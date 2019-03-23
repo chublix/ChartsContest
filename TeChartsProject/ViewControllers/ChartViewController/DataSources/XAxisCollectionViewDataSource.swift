@@ -18,7 +18,7 @@ class XAxisCollectionViewDataSource: NSObject {
     }
     
     var titles: [String] = [] {
-        didSet { collectionView.reloadData() }
+        didSet { collectionView?.reloadData() }
     }
     
 }
