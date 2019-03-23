@@ -14,7 +14,6 @@ class ChartViewController: UIViewController {
     @IBOutlet private weak var yAxisCollectionView: UICollectionView!
     
     @IBOutlet private weak var backgroundView: UIView!
-//    @IBOutlet private weak var contentView: UIView!
     @IBOutlet private weak var chartViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet private weak var chartView: ChartView!
     @IBOutlet private weak var scrollView: UIScrollView!
@@ -22,12 +21,17 @@ class ChartViewController: UIViewController {
     @IBOutlet private weak var xAxisDataSource: XAxisCollectionViewDataSource!
     @IBOutlet private weak var yAxisDataSource: YAxisCollectionViewDataSource!
     
+    var offset: Float = 0.0 {
+        didSet {
+            let x = CGFloat(offset) * scrollView.contentSize.width
+            scrollView.setContentOffset(CGPoint(x: x, y: 0), animated: false)
+        }
+    }
+    
     var scale: Float = 1.0 {
         didSet {
-            let newWidth = (maxContentWidth - scrollView.bounds.width) * CGFloat(scale)
-//            chartView.frame.size.width = contentView.bounds.width + newWidth
+            let newWidth = scrollView.bounds.width * CGFloat(scale)
             chartViewWidthConstraint.constant = newWidth
-//            scrollView.contentSize.width = newWidth
         }
     }
     
@@ -38,7 +42,6 @@ class ChartViewController: UIViewController {
         }
     }
     
-    private var maxContentWidth: CGFloat = 0
     private lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM d"
@@ -47,9 +50,9 @@ class ChartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        xAxisDataSource.titles = ["feb 4", "feb 7", "feb 10", "feb 13"]
+        chartView.chartsData = chart
+        updateXAxisLabels()
         updateYAxisLabels()
-        chartSetup()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -62,15 +65,13 @@ class ChartViewController: UIViewController {
         backgroundView.layer.addSublayer(backgroundLayer)
     }
     
-    private func chartSetup() {
-        chartView.chartsData = chart
-        chartViewWidthConstraint.constant = (chartView.frame.height / 6) * CGFloat(chart?.x.count ?? 0)
-        scrollView.contentSize.width = chartViewWidthConstraint.constant
-        maxContentWidth = chartViewWidthConstraint.constant
+    override func updateViewConstraints() {
+        super.updateViewConstraints()
+        chartViewWidthConstraint.constant = scrollView.bounds.width * 5
     }
     
     private func updateXAxisLabels() {
-        
+        xAxisDataSource.titles = ["feb 4", "feb 7", "feb 10", "feb 13"]
     }
     
     private func updateYAxisLabels() {

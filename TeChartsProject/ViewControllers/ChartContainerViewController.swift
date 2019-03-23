@@ -45,7 +45,7 @@ class ChartContainerViewController: UIViewController {
     }
     
     @IBAction private func sliderValueChanged(_ sender: UISlider) {
-        chartViewController.scale = sender.value
+//        chartViewController.scale = sender.value
     }
 
 }
@@ -54,7 +54,8 @@ class ChartContainerViewController: UIViewController {
 extension ChartContainerViewController: ChartSliderViewControllerDelegate {
     
     func chartSliderViewController(_ controller: ChartSliderViewController, changedMin min: Float, changedMax max: Float) {
-        debugPrint("min: \(min); max: \(max)")
+        chartViewController.scale = 1 / (max - min)
+        chartViewController.offset = min
     }
     
 }

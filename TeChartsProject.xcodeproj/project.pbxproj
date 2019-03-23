@@ -24,8 +24,6 @@
 		57DD350D22356ECA001A48CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DD350B22356ECA001A48CB /* Main.storyboard */; };
 		57DD350F22356ECC001A48CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57DD350E22356ECC001A48CB /* Assets.xcassets */; };
 		57DD351222356ECC001A48CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DD351022356ECC001A48CB /* LaunchScreen.storyboard */; };
-		57E3DE452237ECF500E43EEB /* points.json in Resources */ = {isa = PBXBuildFile; fileRef = 57E3DE432237EB3100E43EEB /* points.json */; };
-		57E3DE472237F07500E43EEB /* points1.json in Resources */ = {isa = PBXBuildFile; fileRef = 57E3DE462237F07500E43EEB /* points1.json */; };
 		AB8B2AD72244BC8900F15D58 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B2AD62244BC8900F15D58 /* StartViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,8 +60,6 @@
 		57DD350E22356ECC001A48CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57DD351122356ECC001A48CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57DD351322356ECC001A48CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		57E3DE432237EB3100E43EEB /* points.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = points.json; sourceTree = "<group>"; };
-		57E3DE462237F07500E43EEB /* points1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = points1.json; sourceTree = "<group>"; };
 		AB8B2AD62244BC8900F15D58 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,8 +163,6 @@
 			isa = PBXGroup;
 			children = (
 				570463C7223BB24200E8E81E /* chart_data.json */,
-				57E3DE462237F07500E43EEB /* points1.json */,
-				57E3DE432237EB3100E43EEB /* points.json */,
 				57DD350E22356ECC001A48CB /* Assets.xcassets */,
 			);
 			path = Assets;
@@ -258,13 +252,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57E3DE472237F07500E43EEB /* points1.json in Resources */,
 				57DD351222356ECC001A48CB /* LaunchScreen.storyboard in Resources */,
 				570463C8223BB24200E8E81E /* chart_data.json in Resources */,
 				57DD350F22356ECC001A48CB /* Assets.xcassets in Resources */,
 				57DD350D22356ECA001A48CB /* Main.storyboard in Resources */,
 				57BFB0472242D83E0093D026 /* AxisTextCollectionViewCell.xib in Resources */,
-				57E3DE452237ECF500E43EEB /* points.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,15 +429,15 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 228JS57M4U;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "TeChartsProject/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.chuprina.TeChartsProject;
+				PRODUCT_BUNDLE_IDENTIFIER = me.chekhova.chartsproject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -458,18 +450,18 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 228JS57M4U;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = AGHA3VWM5L;
 				INFOPLIST_FILE = "TeChartsProject/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.chuprina.TeChartsProject;
+				PRODUCT_BUNDLE_IDENTIFIER = me.chekhova.chartsproject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "TeCharts App AdHoc profile";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
