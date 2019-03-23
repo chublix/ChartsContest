@@ -68,7 +68,7 @@ class ChartSliderViewController: UIViewController {
     
     private func updateMaskLayerPath() {
         let path = UIBezierPath(
-            roundedRect: chartView.bounds,
+            roundedRect: maskLayer.bounds,
             cornerRadius: 0
         )
         var frame = thumbView.frame
