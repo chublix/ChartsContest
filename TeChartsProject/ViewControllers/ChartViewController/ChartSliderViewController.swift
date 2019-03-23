@@ -61,18 +61,20 @@ class ChartSliderViewController: UIViewController {
     
     private func updateFrames() {
         minimumWidth = thumbWidth * view.bounds.width
-        maskLayer.frame = view.bounds
+        maskLayer.frame = chartView.frame
         thumbView.frame = CGRect(x: 0, y: 0, width: minimumWidth, height: view.bounds.height)
         updateMaskLayerPath()
     }
     
     private func updateMaskLayerPath() {
         let path = UIBezierPath(
-            roundedRect: view.bounds,
+            roundedRect: chartView.bounds,
             cornerRadius: 0
         )
+        var frame = thumbView.frame
+        frame.size.height = chartView.bounds.height
         let holePath = UIBezierPath(
-            roundedRect: thumbView.frame,
+            roundedRect: frame,
             cornerRadius: 0
         )
         

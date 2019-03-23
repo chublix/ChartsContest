@@ -29,7 +29,7 @@ class ChartViewController: UIViewController {
         }
     }
     
-    var scale: Float = 1.0 {
+    var scale: Float = 5.0 {
         didSet {
             let newWidth = scrollView.bounds.width * CGFloat(scale)
             chartViewWidthConstraint.constant = newWidth

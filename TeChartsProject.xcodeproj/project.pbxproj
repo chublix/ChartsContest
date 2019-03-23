@@ -53,7 +53,7 @@
 		57BFB0492242D9640093D026 /* XAxisCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAxisCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		57BFB04B2242D9710093D026 /* YAxisCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YAxisCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		57C27A34223E81D200B8D6E8 /* BackgroundLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundLayer.swift; sourceTree = "<group>"; };
-		57DD350422356ECA001A48CB /* TeChartsProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeChartsProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		57DD350422356ECA001A48CB /* TeCharts App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TeCharts App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57DD350722356ECA001A48CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57DD350922356ECA001A48CB /* ChartContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartContainerViewController.swift; sourceTree = "<group>"; };
 		57DD350C22356ECA001A48CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 		57DD350522356ECA001A48CB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				57DD350422356ECA001A48CB /* TeChartsProject.app */,
+				57DD350422356ECA001A48CB /* TeCharts App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -206,7 +206,7 @@
 			);
 			name = TeChartsProject;
 			productName = TeChartsProject;
-			productReference = 57DD350422356ECA001A48CB /* TeChartsProject.app */;
+			productReference = 57DD350422356ECA001A48CB /* TeCharts App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -438,7 +438,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.chekhova.chartsproject;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "TeCharts App";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -460,7 +460,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.chekhova.chartsproject;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "TeCharts App";
 				PROVISIONING_PROFILE_SPECIFIER = "TeCharts App AdHoc profile";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
