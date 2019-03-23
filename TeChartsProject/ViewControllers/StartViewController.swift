@@ -2,7 +2,7 @@
 //  StartViewController.swift
 //  TeChartsProject
 //
-//  Created by Elena Chekhova on 3/22/19.
+//  Created by Andriy Chuprina on 3/22/19.
 //  Copyright © 2019 Andriy Chuprina. All rights reserved.
 //
 

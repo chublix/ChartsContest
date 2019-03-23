@@ -129,7 +129,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oOx-W9-yFv">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="248"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Jo-yS-vua" customClass="BackgroundView" customModule="TeCharts_App">
+                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Jo-yS-vua" customClass="BackgroundView" customModule="TeCharts_App">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="248"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
@@ -144,10 +144,10 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygV-Q8-bnh">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygV-Q8-bnh">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="248"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xxM-Lt-IdZ" customClass="ChartView" customModule="TeChartsProject" customModuleProvider="target">
+                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xxM-Lt-IdZ" customClass="ChartView" customModule="TeChartsProject" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="248"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -168,20 +168,31 @@
                                             <constraint firstAttribute="trailing" secondItem="xxM-Lt-IdZ" secondAttribute="trailing" id="zJf-au-SNC"/>
                                         </constraints>
                                     </scrollView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dTk-tc-Jsm">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="248"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <segue destination="ddv-BS-CnF" kind="embed" id="Kle-yJ-jjy"/>
+                                        </connections>
+                                    </containerView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="ygV-Q8-bnh" secondAttribute="bottom" id="37n-0I-vh6"/>
                                     <constraint firstItem="ygV-Q8-bnh" firstAttribute="leading" secondItem="oOx-W9-yFv" secondAttribute="leading" id="3Cr-IC-DOr"/>
                                     <constraint firstAttribute="trailing" secondItem="3Jo-yS-vua" secondAttribute="trailing" id="CtE-VI-COI"/>
                                     <constraint firstAttribute="trailing" secondItem="ygV-Q8-bnh" secondAttribute="trailing" id="DVd-gC-skM"/>
+                                    <constraint firstItem="dTk-tc-Jsm" firstAttribute="top" secondItem="oOx-W9-yFv" secondAttribute="top" id="PUt-kA-5In"/>
+                                    <constraint firstAttribute="bottom" secondItem="dTk-tc-Jsm" secondAttribute="bottom" id="VuC-Fd-cLV"/>
                                     <constraint firstItem="3Jo-yS-vua" firstAttribute="top" secondItem="oOx-W9-yFv" secondAttribute="top" id="Xhb-GH-djJ"/>
                                     <constraint firstItem="ygV-Q8-bnh" firstAttribute="top" secondItem="oOx-W9-yFv" secondAttribute="top" id="aaS-pd-0Aj"/>
+                                    <constraint firstAttribute="trailing" secondItem="dTk-tc-Jsm" secondAttribute="trailing" id="eQ2-Vz-c3n"/>
+                                    <constraint firstItem="dTk-tc-Jsm" firstAttribute="leading" secondItem="oOx-W9-yFv" secondAttribute="leading" id="f9I-eT-PzB"/>
                                     <constraint firstItem="3Jo-yS-vua" firstAttribute="leading" secondItem="oOx-W9-yFv" secondAttribute="leading" id="jMo-TM-j9g"/>
                                     <constraint firstItem="xxM-Lt-IdZ" firstAttribute="height" secondItem="oOx-W9-yFv" secondAttribute="height" id="nbW-nS-2c3"/>
                                     <constraint firstAttribute="bottom" secondItem="3Jo-yS-vua" secondAttribute="bottom" id="w5N-AP-dn2"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ykg-bS-8HS">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ykg-bS-8HS">
                                 <rect key="frame" x="0.0" y="248" width="375" height="25"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -199,7 +210,7 @@
                                     <outlet property="delegate" destination="dTi-4X-ofb" id="Zx6-Ik-Pc6"/>
                                 </connections>
                             </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KLf-8C-R1N">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KLf-8C-R1N">
                                 <rect key="frame" x="0.0" y="0.0" width="70" height="248"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -238,7 +249,6 @@
                         <outlet property="backgroundView" destination="3Jo-yS-vua" id="GVt-T9-lKe"/>
                         <outlet property="chartView" destination="xxM-Lt-IdZ" id="Iq9-dT-Db4"/>
                         <outlet property="chartViewWidthConstraint" destination="36m-jK-fKK" id="Vn6-wa-aCu"/>
-                        <outlet property="overlayView" destination="bxI-SL-gDm" id="uC5-wF-hwZ"/>
                         <outlet property="scrollView" destination="ygV-Q8-bnh" id="m03-DX-N7e"/>
                         <outlet property="xAxisCollectionView" destination="ykg-bS-8HS" id="Jpb-ss-Enm"/>
                         <outlet property="xAxisDataSource" destination="dTi-4X-ofb" id="0PS-On-PuK"/>
@@ -257,19 +267,6 @@
                         <outlet property="collectionView" destination="KLf-8C-R1N" id="F8n-2b-CQo"/>
                     </connections>
                 </customObject>
-                <view contentMode="scaleToFill" id="bxI-SL-gDm" customClass="OverlayView" customModule="TeCharts_App">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="248"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                            <real key="value" value="0.5"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                            <color key="value" white="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </view>
             </objects>
             <point key="canvasLocation" x="2556" y="-27.886056971514247"/>
         </scene>
@@ -402,6 +399,92 @@
                 </view>
             </objects>
             <point key="canvasLocation" x="2469" y="353"/>
+        </scene>
+        <!--Overlay View Controller-->
+        <scene sceneID="F5t-8S-tHi">
+            <objects>
+                <viewController id="ddv-BS-CnF" customClass="OverlayViewController" customModule="TeCharts_App" sceneMemberID="viewController">
+                    <view key="view" hidden="YES" contentMode="scaleToFill" id="HeX-8h-ea2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="248"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wnH-bp-lMA">
+                                <rect key="frame" x="168" y="0.0" width="39" height="63"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYw-6y-bcM">
+                                        <rect key="frame" x="4" y="4" width="31" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="17" id="YMF-uh-1Mw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p1X-d0-OCL">
+                                        <rect key="frame" x="4" y="25" width="31" height="34"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="31" id="4ef-u3-DvS"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eUk-4F-QF4">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="5XI-xv-Khw" id="Rrt-jO-wGn"/>
+                                            <outlet property="delegate" destination="5XI-xv-Khw" id="vvc-mK-9YR"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.94850352112676062" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="p1X-d0-OCL" firstAttribute="leading" secondItem="wnH-bp-lMA" secondAttribute="leading" constant="4" id="2UA-dW-W75"/>
+                                    <constraint firstItem="MYw-6y-bcM" firstAttribute="leading" secondItem="wnH-bp-lMA" secondAttribute="leading" constant="4" id="GW8-so-6Wx"/>
+                                    <constraint firstItem="MYw-6y-bcM" firstAttribute="top" secondItem="wnH-bp-lMA" secondAttribute="top" constant="4" id="Hnr-TP-YUB"/>
+                                    <constraint firstAttribute="height" constant="63" id="NYf-TB-asu"/>
+                                    <constraint firstAttribute="trailing" secondItem="p1X-d0-OCL" secondAttribute="trailing" constant="4" id="Uwp-Ih-XEv"/>
+                                    <constraint firstAttribute="bottom" secondItem="p1X-d0-OCL" secondAttribute="bottom" constant="4" id="XoR-Lr-dPw"/>
+                                    <constraint firstItem="p1X-d0-OCL" firstAttribute="top" secondItem="MYw-6y-bcM" secondAttribute="bottom" constant="4" id="b5Y-9A-fyl"/>
+                                    <constraint firstAttribute="trailing" secondItem="MYw-6y-bcM" secondAttribute="trailing" constant="4" id="t0U-Ut-RVA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wnH-bp-lMA" firstAttribute="centerX" secondItem="HeX-8h-ea2" secondAttribute="centerX" id="dAk-SO-zcN"/>
+                            <constraint firstItem="wnH-bp-lMA" firstAttribute="top" secondItem="HeX-8h-ea2" secondAttribute="top" id="fnG-7o-HpT"/>
+                        </constraints>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="pointFillColor">
+                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                            <color key="value" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="collectionViewWidthConstraint" destination="4ef-u3-DvS" id="XKy-sq-0Ui"/>
+                        <outlet property="historyDataSource" destination="5XI-xv-Khw" id="qLg-Ah-Cxd"/>
+                        <outlet property="historyOffsetViewConstraint" destination="dAk-SO-zcN" id="Y5g-Vj-3kh"/>
+                        <outlet property="historyView" destination="wnH-bp-lMA" id="7oE-cT-TSa"/>
+                        <outlet property="titleLabel" destination="MYw-6y-bcM" id="Cxu-I9-fdW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nZE-Fx-An6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="5XI-xv-Khw" customClass="HistoryDataSource" customModule="TeCharts_App">
+                    <connections>
+                        <outlet property="collectionView" destination="p1X-d0-OCL" id="BI8-bA-Nxc"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="3378.4000000000001" y="-28.785607196401802"/>
         </scene>
     </scenes>
     <resources>

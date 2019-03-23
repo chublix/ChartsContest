@@ -43,12 +43,6 @@ class ChartView: UIView {
         }
     }
     
-    private func point(from values: (x: Int, y: Int)) -> CGPoint {
-        let x: CGFloat = ((CGFloat(values.x - firstX)) * bounds.width) / CGFloat(lastX - firstX)
-        let y: CGFloat = (bounds.height - (CGFloat(values.y) * bounds.height) / CGFloat(greatestY))
-        return CGPoint(x: x, y: y)
-    }
-    
     private func updateChartSublayers(for lines: [Line]?) {
         zip(chartsSublayers ?? [], lines ?? []).forEach { (item) in
             let (layer, line) = item
@@ -81,6 +75,12 @@ class ChartView: UIView {
             chartsSublayers = createSubLayers(for: lines)
         }
         updateChartSublayers(for: lines)
+    }
+    
+    func point(from values: (x: Int, y: Int)) -> CGPoint {
+        let x: CGFloat = ((CGFloat(values.x - firstX)) * bounds.width) / CGFloat(lastX - firstX)
+        let y: CGFloat = (bounds.height - (CGFloat(values.y) * bounds.height) / CGFloat(greatestY))
+        return CGPoint(x: x, y: y)
     }
     
 }

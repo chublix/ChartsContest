@@ -30,7 +30,7 @@ class ChartSliderViewController: UIViewController {
     
     var minValue: Float = 0
     var maxValue: Float = 0
-    var thumbWidth: CGFloat = 0.2 {
+    var thumbWidth: CGFloat = 1 / 6 {
         didSet { minimumWidth = thumbWidth * view.bounds.width }
     }
     
@@ -45,8 +45,8 @@ class ChartSliderViewController: UIViewController {
         setup()
     }
     
-    override func updateViewConstraints() {
-        super.updateViewConstraints()
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         updateFrames()
     }
     

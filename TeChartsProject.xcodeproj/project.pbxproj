@@ -26,6 +26,10 @@
 		AB8B2AD72244BC8900F15D58 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B2AD62244BC8900F15D58 /* StartViewController.swift */; };
 		ABD82B8D2246A062002909B8 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD82B8C2246A062002909B8 /* BackgroundView.swift */; };
 		ABD82B8F2246AEAF002909B8 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD82B8E2246AEAF002909B8 /* OverlayView.swift */; };
+		ABD82B922246E11F002909B8 /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD82B902246E11F002909B8 /* HistoryCollectionViewCell.swift */; };
+		ABD82B932246E11F002909B8 /* HistoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABD82B912246E11F002909B8 /* HistoryCollectionViewCell.xib */; };
+		ABD82B952246E2B4002909B8 /* HistoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD82B942246E2B4002909B8 /* HistoryDataSource.swift */; };
+		ABD82B972246ECF7002909B8 /* OverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD82B962246ECF7002909B8 /* OverlayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,6 +67,10 @@
 		AB8B2AD62244BC8900F15D58 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		ABD82B8C2246A062002909B8 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		ABD82B8E2246AEAF002909B8 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		ABD82B902246E11F002909B8 /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		ABD82B912246E11F002909B8 /* HistoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		ABD82B942246E2B4002909B8 /* HistoryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDataSource.swift; sourceTree = "<group>"; };
+		ABD82B962246ECF7002909B8 /* OverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +118,7 @@
 				57BFB0482242D9190093D026 /* DataSources */,
 				57BFB0412242D81A0093D026 /* ChartViewController.swift */,
 				579D940A22450DC500FD9692 /* ChartSliderViewController.swift */,
+				ABD82B962246ECF7002909B8 /* OverlayViewController.swift */,
 			);
 			path = ChartViewController;
 			sourceTree = "<group>";
@@ -119,6 +128,8 @@
 			children = (
 				57BFB0442242D83E0093D026 /* AxisTextCollectionViewCell.swift */,
 				57BFB0452242D83E0093D026 /* AxisTextCollectionViewCell.xib */,
+				ABD82B902246E11F002909B8 /* HistoryCollectionViewCell.swift */,
+				ABD82B912246E11F002909B8 /* HistoryCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -128,6 +139,7 @@
 			children = (
 				57BFB0492242D9640093D026 /* XAxisCollectionViewDataSource.swift */,
 				57BFB04B2242D9710093D026 /* YAxisCollectionViewDataSource.swift */,
+				ABD82B942246E2B4002909B8 /* HistoryDataSource.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -258,6 +270,7 @@
 				57DD351222356ECC001A48CB /* LaunchScreen.storyboard in Resources */,
 				570463C8223BB24200E8E81E /* chart_data.json in Resources */,
 				57DD350F22356ECC001A48CB /* Assets.xcassets in Resources */,
+				ABD82B932246E11F002909B8 /* HistoryCollectionViewCell.xib in Resources */,
 				57DD350D22356ECA001A48CB /* Main.storyboard in Resources */,
 				57BFB0472242D83E0093D026 /* AxisTextCollectionViewCell.xib in Resources */,
 			);
@@ -281,9 +294,12 @@
 				57331AAE2243933500D52844 /* UIColor+extensions.swift in Sources */,
 				ABD82B8F2246AEAF002909B8 /* OverlayView.swift in Sources */,
 				57BFB04C2242D9710093D026 /* YAxisCollectionViewDataSource.swift in Sources */,
+				ABD82B972246ECF7002909B8 /* OverlayViewController.swift in Sources */,
+				ABD82B922246E11F002909B8 /* HistoryCollectionViewCell.swift in Sources */,
 				ABD82B8D2246A062002909B8 /* BackgroundView.swift in Sources */,
 				579D940B22450DC500FD9692 /* ChartSliderViewController.swift in Sources */,
 				57BFB0422242D81A0093D026 /* ChartViewController.swift in Sources */,
+				ABD82B952246E2B4002909B8 /* HistoryDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
