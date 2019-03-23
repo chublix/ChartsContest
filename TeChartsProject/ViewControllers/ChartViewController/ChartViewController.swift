@@ -17,6 +17,7 @@ class ChartViewController: UIViewController {
     @IBOutlet private weak var chartViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet private weak var chartView: ChartView!
     @IBOutlet private weak var scrollView: UIScrollView!
+    @IBOutlet private weak var overlayView: OverlayView!
     
     @IBOutlet private weak var xAxisDataSource: XAxisCollectionViewDataSource!
     @IBOutlet private weak var yAxisDataSource: YAxisCollectionViewDataSource!
@@ -53,6 +54,8 @@ class ChartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         chartView.chartsData = chart
+        view.addSubview(overlayView)
+        overlayView.points = [(CGPoint(x: 50, y: 50), .red), (CGPoint(x: 50, y: 150), .green)]
         updateXAxisLabels()
         updateYAxisLabels()
     }
@@ -60,6 +63,7 @@ class ChartViewController: UIViewController {
     override func updateViewConstraints() {
         super.updateViewConstraints()
         chartViewWidthConstraint.constant = scrollView.bounds.width * 5
+        overlayView.frame = chartView.frame
     }
     
     private func updateXAxisLabels() {

@@ -238,6 +238,7 @@
                         <outlet property="backgroundView" destination="3Jo-yS-vua" id="GVt-T9-lKe"/>
                         <outlet property="chartView" destination="xxM-Lt-IdZ" id="Iq9-dT-Db4"/>
                         <outlet property="chartViewWidthConstraint" destination="36m-jK-fKK" id="Vn6-wa-aCu"/>
+                        <outlet property="overlayView" destination="bxI-SL-gDm" id="uC5-wF-hwZ"/>
                         <outlet property="scrollView" destination="ygV-Q8-bnh" id="m03-DX-N7e"/>
                         <outlet property="xAxisCollectionView" destination="ykg-bS-8HS" id="Jpb-ss-Enm"/>
                         <outlet property="xAxisDataSource" destination="dTi-4X-ofb" id="0PS-On-PuK"/>
@@ -256,6 +257,19 @@
                         <outlet property="collectionView" destination="KLf-8C-R1N" id="F8n-2b-CQo"/>
                     </connections>
                 </customObject>
+                <view contentMode="scaleToFill" id="bxI-SL-gDm" customClass="OverlayView" customModule="TeCharts_App">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="248"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                            <color key="value" white="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </objects>
             <point key="canvasLocation" x="2556" y="-27.886056971514247"/>
         </scene>

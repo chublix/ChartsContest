@@ -25,6 +25,7 @@
 		57DD351222356ECC001A48CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DD351022356ECC001A48CB /* LaunchScreen.storyboard */; };
 		AB8B2AD72244BC8900F15D58 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B2AD62244BC8900F15D58 /* StartViewController.swift */; };
 		ABD82B8D2246A062002909B8 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD82B8C2246A062002909B8 /* BackgroundView.swift */; };
+		ABD82B8F2246AEAF002909B8 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD82B8E2246AEAF002909B8 /* OverlayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,6 +62,7 @@
 		57DD351322356ECC001A48CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB8B2AD62244BC8900F15D58 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		ABD82B8C2246A062002909B8 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		ABD82B8E2246AEAF002909B8 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				ABD82B8C2246A062002909B8 /* BackgroundView.swift */,
 				57331AAF224397C900D52844 /* ChartView.swift */,
+				ABD82B8E2246AEAF002909B8 /* OverlayView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				57331AAD2243932B00D52844 /* ChartModels.swift in Sources */,
 				57DD350822356ECA001A48CB /* AppDelegate.swift in Sources */,
 				57331AAE2243933500D52844 /* UIColor+extensions.swift in Sources */,
+				ABD82B8F2246AEAF002909B8 /* OverlayView.swift in Sources */,
 				57BFB04C2242D9710093D026 /* YAxisCollectionViewDataSource.swift in Sources */,
 				ABD82B8D2246A062002909B8 /* BackgroundView.swift in Sources */,
 				579D940B22450DC500FD9692 /* ChartSliderViewController.swift in Sources */,
