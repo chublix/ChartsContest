@@ -83,7 +83,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BP3-Ij-xcb">
                                 <rect key="frame" x="16" y="80" width="343" height="260"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="260" id="1jv-Mz-ynm"/>
+                                    <constraint firstAttribute="width" secondItem="BP3-Ij-xcb" secondAttribute="height" multiplier="343:260" id="ccd-Sc-t84"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="TM3-55-Pid" kind="embed" id="5KM-Fk-R0C"/>

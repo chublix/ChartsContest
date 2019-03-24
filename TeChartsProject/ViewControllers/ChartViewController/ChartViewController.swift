@@ -40,7 +40,7 @@ class ChartViewController: UIViewController {
     
     var chart: Chart? {
         didSet {
-            chartView?.chartsData = chart
+            chartView?.chart = chart
             updateYAxisLabels()
             updateXAxisLabels()
         }
@@ -56,7 +56,7 @@ class ChartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        chartView.chartsData = chart
+        chartView.chart = chart
         updateXAxisLabels()
         updateYAxisLabels()
     }

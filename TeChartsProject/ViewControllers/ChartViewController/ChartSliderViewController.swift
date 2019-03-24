@@ -36,12 +36,12 @@ class ChartSliderViewController: UIViewController {
     
     
     var chart: Chart! {
-        didSet { chartView?.chartsData = chart }
+        didSet { chartView?.chart = chart }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        chartView.chartsData = chart
+        chartView.chart = chart
         setup()
     }
     

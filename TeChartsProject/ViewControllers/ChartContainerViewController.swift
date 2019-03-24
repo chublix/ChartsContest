@@ -23,14 +23,6 @@ class ChartContainerViewController: UIViewController {
     
     var chart: Chart?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? ChartViewController {
             chartViewController = vc
@@ -42,10 +34,6 @@ class ChartContainerViewController: UIViewController {
     @IBAction private func disableChart(_ sender: UIButton) {
         chartSliderViewController.chart.lines[0].enabled.toggle()
         chartViewController.chart?.lines[0].enabled.toggle()
-    }
-    
-    @IBAction private func sliderValueChanged(_ sender: UISlider) {
-//        chartViewController.scale = sender.value
     }
 
 }

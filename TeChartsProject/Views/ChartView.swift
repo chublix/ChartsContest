@@ -10,7 +10,7 @@ import UIKit
 
 class ChartView: UIView {
 
-    var chartsData: Chart? {
+    var chart: Chart? {
         didSet {
             update()
         }
@@ -26,9 +26,14 @@ class ChartView: UIView {
         didSet { update() }
     }
     
-    private var firstX: Int = 0
-    private var lastX: Int = 0
-    private var greatestY: Int = 0
+//    private var firstX: Int = 0
+//    private var lastX: Int = 0
+//    private var greatestY: Int = 0
+
+    private var minX: Int = 0
+    private var sizeX: Int = 0
+    private var minY: Int = 0
+    private var sizeY: Int = 0
     
     private var chartsSublayers: [CAShapeLayer]? {
         get { return layer.sublayers as? [CAShapeLayer] }
@@ -54,7 +59,7 @@ class ChartView: UIView {
     }
     
     private func createPath(for line: Line) -> UIBezierPath? {
-        guard let xValues = chartsData?.x else { return nil }
+        guard let xValues = chart?.x else { return nil }
         let sequence = Array(zip(xValues, line.values))
         let first = sequence[0]
         let path = UIBezierPath()
@@ -66,20 +71,24 @@ class ChartView: UIView {
     }
     
     private func update() {
-        let lines = chartsData?.lines.filter { $0.enabled }
-        greatestY = lines?.map { $0.values }.flatMap { $0 }.max() ?? 0
-        firstX = chartsData?.x.first ?? 0
-        lastX = chartsData?.x.last ?? 0
+        guard let chart = chart else { return }
+        let lines = chart.lines.filter { $0.enabled }
+
+        let allYValues = lines.map { $0.values }.flatMap { $0 }
+        minY = allYValues.min() ?? 0
+        sizeY = (allYValues.max() ?? 0) - minY
+        minX = chart.x.first ?? 0
+        sizeX = (chart.x.last ?? 0) - minX
         
-        if chartsSublayers?.count != lines?.count {
+        if chartsSublayers?.count != lines.count {
             chartsSublayers = createSubLayers(for: lines)
         }
         updateChartSublayers(for: lines)
     }
     
     func point(from values: (x: Int, y: Int)) -> CGPoint {
-        let x: CGFloat = ((CGFloat(values.x - firstX)) * bounds.width) / CGFloat(lastX - firstX)
-        let y: CGFloat = (bounds.height - (CGFloat(values.y) * bounds.height) / CGFloat(greatestY))
+        let x: CGFloat = ((CGFloat(values.x - minX)) * bounds.width) / CGFloat(sizeX)
+        let y: CGFloat = (bounds.height - (CGFloat(values.y - minY) * bounds.height) / CGFloat(sizeY))
         return CGPoint(x: x, y: y)
     }
     
