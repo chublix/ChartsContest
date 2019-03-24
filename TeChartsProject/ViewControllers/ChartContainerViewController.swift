@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ChartContainerViewController: UIViewController {
+class ChartContainerViewController: UITableViewController {
 
     private weak var chartViewController: ChartViewController! {
         didSet { chartViewController.chart = chart }
@@ -21,7 +21,17 @@ class ChartContainerViewController: UIViewController {
         }
     }
     
-    var chart: Chart?
+    var chart: Chart? {
+        didSet {
+            chartSliderViewController?.chart = chart
+            chartViewController?.chart = chart
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.tableFooterView = UIView()
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? ChartViewController {
@@ -30,12 +40,31 @@ class ChartContainerViewController: UIViewController {
             chartSliderViewController = vc
         }
     }
-    
-    @IBAction private func disableChart(_ sender: UIButton) {
-        chartSliderViewController.chart.lines[0].enabled.toggle()
-        chartViewController.chart?.lines[0].enabled.toggle()
-    }
 
+}
+
+
+extension ChartContainerViewController {
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return chart?.lines.count ?? 0
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return tableView.dequeueReusableCell(withIdentifier: "ChartLineTableViewCell", for: indexPath)
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let line = chart?.lines[indexPath.row] else { return }
+        (cell as? ChartLineTableViewCell)?.setup(with: line)
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chart?.lines[indexPath.row].enabled.toggle()
+        tableView.reloadData()
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 }
 
 

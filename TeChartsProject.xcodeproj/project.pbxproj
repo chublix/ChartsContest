@@ -24,6 +24,7 @@
 		57DD350F22356ECC001A48CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57DD350E22356ECC001A48CB /* Assets.xcassets */; };
 		57DD351222356ECC001A48CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DD351022356ECC001A48CB /* LaunchScreen.storyboard */; };
 		AB8B2AD72244BC8900F15D58 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B2AD62244BC8900F15D58 /* StartViewController.swift */; };
+		ABC82E4D224780CA004C766F /* ChartLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC82E4C224780CA004C766F /* ChartLineTableViewCell.swift */; };
 		ABD82B8D2246A062002909B8 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD82B8C2246A062002909B8 /* BackgroundView.swift */; };
 		ABD82B8F2246AEAF002909B8 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD82B8E2246AEAF002909B8 /* OverlayView.swift */; };
 		ABD82B922246E11F002909B8 /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD82B902246E11F002909B8 /* HistoryCollectionViewCell.swift */; };
@@ -65,6 +66,7 @@
 		57DD351122356ECC001A48CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57DD351322356ECC001A48CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB8B2AD62244BC8900F15D58 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		ABC82E4C224780CA004C766F /* ChartLineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartLineTableViewCell.swift; sourceTree = "<group>"; };
 		ABD82B8C2246A062002909B8 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		ABD82B8E2246AEAF002909B8 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		ABD82B902246E11F002909B8 /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -195,12 +197,21 @@
 		57DD351D223572D8001A48CB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				ABC82E4B22478098004C766F /* Cells */,
 				57BFB0402242D7FD0093D026 /* ChartViewController */,
 				57DD350922356ECA001A48CB /* ChartContainerViewController.swift */,
 				AB8B2AD62244BC8900F15D58 /* StartViewController.swift */,
 				57DD350B22356ECA001A48CB /* Main.storyboard */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		ABC82E4B22478098004C766F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				ABC82E4C224780CA004C766F /* ChartLineTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +302,7 @@
 				AB8B2AD72244BC8900F15D58 /* StartViewController.swift in Sources */,
 				57331AAD2243932B00D52844 /* ChartModels.swift in Sources */,
 				57DD350822356ECA001A48CB /* AppDelegate.swift in Sources */,
+				ABC82E4D224780CA004C766F /* ChartLineTableViewCell.swift in Sources */,
 				57331AAE2243933500D52844 /* UIColor+extensions.swift in Sources */,
 				ABD82B8F2246AEAF002909B8 /* OverlayView.swift in Sources */,
 				57BFB04C2242D9710093D026 /* YAxisCollectionViewDataSource.swift in Sources */,

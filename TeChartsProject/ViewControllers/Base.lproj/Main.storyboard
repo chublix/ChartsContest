@@ -61,7 +61,7 @@
                     <navigationItem key="navigationItem" title="Charts" id="ZoV-Fk-Tmm"/>
                     <connections>
                         <outlet property="tableView" destination="ezT-6o-BC8" id="khA-pZ-Sxc"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="showChart" id="gIK-va-a1O"/>
+                        <segue destination="gC5-Jb-u7A" kind="show" identifier="showChart" id="0Hu-WT-4JX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kKg-kL-phJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -69,50 +69,93 @@
             <point key="canvasLocation" x="200.80000000000001" y="125.4872563718141"/>
         </scene>
         <!--Chart Container View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="LVq-PK-MIi">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ChartContainerViewController" customModule="TeCharts_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8Jt-X1-6Ck"/>
-                        <viewControllerLayoutGuide type="bottom" id="axi-ed-D8B"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController id="gC5-Jb-u7A" customClass="ChartContainerViewController" customModule="TeCharts_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EKX-jR-eAE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BP3-Ij-xcb">
-                                <rect key="frame" x="16" y="80" width="343" height="260"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="BP3-Ij-xcb" secondAttribute="height" multiplier="343:260" id="ccd-Sc-t84"/>
-                                </constraints>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="separatorInset" minX="48" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="nLB-0c-H2S">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="302"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NSH-GH-Eqd">
+                                    <rect key="frame" x="16" y="8" width="343" height="240"/>
+                                    <connections>
+                                        <segue destination="TM3-55-Pid" kind="embed" id="7Tf-0M-QNg"/>
+                                    </connections>
+                                </containerView>
+                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q2U-qv-j0P">
+                                    <rect key="frame" x="16" y="256" width="343" height="38"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="38" id="lce-Me-cAB"/>
+                                    </constraints>
+                                    <connections>
+                                        <segue destination="FGj-z1-g7O" kind="embed" id="PQu-mU-CLU"/>
+                                    </connections>
+                                </containerView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="q2U-qv-j0P" secondAttribute="trailing" constant="16" id="0tU-Xy-BjU"/>
+                                <constraint firstAttribute="bottom" secondItem="q2U-qv-j0P" secondAttribute="bottom" constant="8" id="1ID-yg-8n5"/>
+                                <constraint firstItem="NSH-GH-Eqd" firstAttribute="leading" secondItem="nLB-0c-H2S" secondAttribute="leading" constant="16" id="G4G-dm-CC1"/>
+                                <constraint firstItem="q2U-qv-j0P" firstAttribute="leading" secondItem="nLB-0c-H2S" secondAttribute="leading" constant="16" id="VmB-DH-8PO"/>
+                                <constraint firstItem="q2U-qv-j0P" firstAttribute="top" secondItem="NSH-GH-Eqd" secondAttribute="bottom" constant="8" id="aWR-92-iJe"/>
+                                <constraint firstAttribute="trailing" secondItem="NSH-GH-Eqd" secondAttribute="trailing" constant="16" id="klh-df-XpY"/>
+                                <constraint firstItem="NSH-GH-Eqd" firstAttribute="top" secondItem="nLB-0c-H2S" secondAttribute="top" constant="8" id="rDZ-OO-YXo"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChartLineTableViewCell" id="YLW-Fa-5cm" customClass="ChartLineTableViewCell" customModule="TeCharts_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="330" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YLW-Fa-5cm" id="nPc-er-6Cg">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TOL-OD-hpO">
+                                            <rect key="frame" x="16" y="14" width="16" height="16"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="16" id="2sm-8H-YEQ"/>
+                                                <constraint firstAttribute="width" constant="16" id="q8x-Ti-VM7"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6D7-fQ-BQZ">
+                                            <rect key="frame" x="48" y="11" width="311" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="vdB-rp-YeA"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="TOL-OD-hpO" firstAttribute="centerY" secondItem="nPc-er-6Cg" secondAttribute="centerY" id="Ed7-j4-qes"/>
+                                        <constraint firstAttribute="trailing" secondItem="6D7-fQ-BQZ" secondAttribute="trailing" constant="16" id="h7r-OV-cb0"/>
+                                        <constraint firstItem="TOL-OD-hpO" firstAttribute="leading" secondItem="nPc-er-6Cg" secondAttribute="leading" constant="16" id="iSX-Nh-0z6"/>
+                                        <constraint firstItem="6D7-fQ-BQZ" firstAttribute="centerY" secondItem="nPc-er-6Cg" secondAttribute="centerY" id="phj-Xi-qoc"/>
+                                        <constraint firstItem="6D7-fQ-BQZ" firstAttribute="leading" secondItem="TOL-OD-hpO" secondAttribute="trailing" constant="16" id="qnh-rg-oLe"/>
+                                    </constraints>
+                                </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="TM3-55-Pid" kind="embed" id="5KM-Fk-R0C"/>
+                                    <outlet property="indicatorView" destination="TOL-OD-hpO" id="6Ah-6f-wS6"/>
+                                    <outlet property="titleLabel" destination="6D7-fQ-BQZ" id="QFu-VA-NVt"/>
                                 </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Swm-kK-p0I">
-                                <rect key="frame" x="16" y="344" width="343" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="q4g-jb-b9a"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="FGj-z1-g7O" kind="embed" id="Nqy-U7-sA7"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="BP3-Ij-xcb" firstAttribute="top" secondItem="8Jt-X1-6Ck" secondAttribute="bottom" constant="16" id="QB2-gl-0CH"/>
-                            <constraint firstItem="Swm-kK-p0I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="SMu-l6-MOo"/>
-                            <constraint firstItem="Swm-kK-p0I" firstAttribute="top" secondItem="BP3-Ij-xcb" secondAttribute="bottom" constant="4" id="V2v-Zk-WE2"/>
-                            <constraint firstAttribute="trailing" secondItem="BP3-Ij-xcb" secondAttribute="trailing" constant="16" id="ZmX-rF-4Ha"/>
-                            <constraint firstAttribute="trailing" secondItem="Swm-kK-p0I" secondAttribute="trailing" constant="16" id="hQn-dT-ttx"/>
-                            <constraint firstItem="BP3-Ij-xcb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="lM8-ew-PWt"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gC5-Jb-u7A" id="GKH-oD-EH1"/>
+                            <outlet property="delegate" destination="gC5-Jb-u7A" id="nP2-wg-EgY"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gmm-aB-y1o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1069.5999999999999" y="124.58770614692655"/>
+            <point key="canvasLocation" x="1138" y="125"/>
         </scene>
         <!--Chart View Controller-->
         <scene sceneID="gtf-Cs-CYi">
@@ -268,7 +311,7 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="2556" y="-27.886056971514247"/>
+            <point key="canvasLocation" x="2246" y="-29"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BDR-DJ-7Ow">
@@ -398,7 +441,7 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="2469" y="353"/>
+            <point key="canvasLocation" x="2220" y="339"/>
         </scene>
         <!--Overlay View Controller-->
         <scene sceneID="F5t-8S-tHi">
