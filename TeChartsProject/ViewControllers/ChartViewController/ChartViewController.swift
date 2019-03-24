@@ -18,6 +18,7 @@ class ChartViewController: UIViewController {
     @IBOutlet private weak var chartView: ChartView!
     @IBOutlet private weak var scrollView: UIScrollView!
     
+    @IBOutlet private weak var xAxisBaseLineView: UIView!
     @IBOutlet private weak var xAxisDataSource: XAxisCollectionViewDataSource!
     @IBOutlet private weak var yAxisDataSource: YAxisCollectionViewDataSource!
     
@@ -75,6 +76,7 @@ class ChartViewController: UIViewController {
         yAxisDataSource.colors = colors
         overlayViewController?.colors = colors
         backgroundView?.linesColor = colors?.chartLines ?? .lightGray
+        xAxisBaseLineView?.backgroundColor = colors?.mainAxis
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -68,7 +68,7 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="26" id="NAK-6I-PAG"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -198,6 +198,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oXf-co-Tyt">
+                                        <rect key="frame" x="0.0" y="247.5" width="375" height="0.5"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="8zY-Ml-rke"/>
+                                        </constraints>
+                                    </view>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygV-Q8-bnh">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="248"/>
                                         <subviews>
@@ -227,8 +234,11 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="ygV-Q8-bnh" secondAttribute="bottom" id="37n-0I-vh6"/>
                                     <constraint firstItem="ygV-Q8-bnh" firstAttribute="leading" secondItem="oOx-W9-yFv" secondAttribute="leading" id="3Cr-IC-DOr"/>
+                                    <constraint firstAttribute="trailing" secondItem="oXf-co-Tyt" secondAttribute="trailing" id="76M-Al-HlW"/>
                                     <constraint firstAttribute="trailing" secondItem="3Jo-yS-vua" secondAttribute="trailing" id="CtE-VI-COI"/>
                                     <constraint firstAttribute="trailing" secondItem="ygV-Q8-bnh" secondAttribute="trailing" id="DVd-gC-skM"/>
+                                    <constraint firstItem="oXf-co-Tyt" firstAttribute="leading" secondItem="oOx-W9-yFv" secondAttribute="leading" id="KsS-oE-Jvb"/>
+                                    <constraint firstAttribute="bottom" secondItem="oXf-co-Tyt" secondAttribute="bottom" id="Q7x-JB-IR9"/>
                                     <constraint firstItem="3Jo-yS-vua" firstAttribute="top" secondItem="oOx-W9-yFv" secondAttribute="top" id="Xhb-GH-djJ"/>
                                     <constraint firstItem="ygV-Q8-bnh" firstAttribute="top" secondItem="oOx-W9-yFv" secondAttribute="top" id="aaS-pd-0Aj"/>
                                     <constraint firstItem="3Jo-yS-vua" firstAttribute="leading" secondItem="oOx-W9-yFv" secondAttribute="leading" id="jMo-TM-j9g"/>
@@ -305,6 +315,7 @@
                         <outlet property="chartView" destination="xxM-Lt-IdZ" id="Iq9-dT-Db4"/>
                         <outlet property="chartViewWidthConstraint" destination="36m-jK-fKK" id="Vn6-wa-aCu"/>
                         <outlet property="scrollView" destination="ygV-Q8-bnh" id="m03-DX-N7e"/>
+                        <outlet property="xAxisBaseLineView" destination="oXf-co-Tyt" id="wBe-ee-GS0"/>
                         <outlet property="xAxisCollectionView" destination="ykg-bS-8HS" id="Jpb-ss-Enm"/>
                         <outlet property="xAxisDataSource" destination="dTi-4X-ofb" id="0PS-On-PuK"/>
                         <outlet property="yAxisCollectionView" destination="KLf-8C-R1N" id="egU-71-Cqm"/>

@@ -49,6 +49,7 @@ class ChartContainerViewController: UITableViewController {
         tableHeaderContentView.backgroundColor = colors?.contentBackground
         chartViewController?.colors = colors
         chartSliderViewController.colors = colors
+        tableView.separatorColor = colors?.tableSeparator
         tableView.reloadData()
     }
     
@@ -79,6 +80,7 @@ extension ChartContainerViewController {
         guard let line = chart?.lines[indexPath.row] else { return }
         (cell as? ChartLineTableViewCell)?.setup(with: line, textColor: colors?.lineText)
         (cell as? ChartLineTableViewCell)?.backgroundColor = colors?.contentBackground
+        cell.separatorInset.left = (indexPath.row + 1) == chart?.lines.count ? tableView.bounds.width : 48
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

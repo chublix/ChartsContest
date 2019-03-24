@@ -35,6 +35,8 @@ protocol Colors {
     var chartLines: UIColor { get }
     var lineText: UIColor { get }
     var historyTitle: UIColor { get }
+    var mainAxis: UIColor { get }
+    var tableSeparator: UIColor { get }
 }
 
 struct LightThemeColors: Colors {
@@ -51,6 +53,10 @@ struct LightThemeColors: Colors {
     
     let historyTitle: UIColor = UIColor(hex: 0x5F6064)
     
+    let mainAxis: UIColor = .darkGray
+    
+    let tableSeparator: UIColor = UIColor(hex: 0xCBCACF)
+    
 }
 
 struct DarkThemeColors: Colors {
@@ -66,5 +72,9 @@ struct DarkThemeColors: Colors {
     let lineText: UIColor = .white
     
     let historyTitle: UIColor = .white
+    
+    let mainAxis: UIColor = .black
+    
+    let tableSeparator: UIColor = UIColor(hex: 0x151B24)
     
 }
