@@ -43,6 +43,7 @@ class ChartViewController: UIViewController {
             chartView?.chart = chart
             updateYAxisLabels()
             updateXAxisLabels()
+            overlayViewController?.view?.isHidden = true
         }
     }
     
@@ -97,26 +98,30 @@ extension ChartViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first, let chart = chart else { return }
-        overlayViewController.view.isHidden = false
+        
         let point = touch.location(in: chartView)
-        let overlayPoint = touch.location(in: overlayViewController.view)
         
         let index = Int((point.x / chartView.bounds.width) * CGFloat(chart.x.count))
-        let value = chart.x[index]
-        let str = dateFormatter.string(from: Date(timeIntervalSince1970: Double(value) / 1000))
-        let yValues = chart.lines.map { $0.values[index] }
-        let points = yValues.map { chartView.point(from: (x: value, y: $0)) }
-        let result = points.map { CGPoint(x: overlayPoint.x - (point.x - $0.x), y: $0.y) }
-        overlayViewController.data = result.enumerated().map({ (offset, element) -> (CGPoint, HistoryItem) in
-            let line = chart.lines[offset]
+        let lines = chart.lines.filter { $0.enabled }
+        guard lines.count > 0 else { return }
+        
+        let overlayPoint = touch.location(in: overlayViewController.view)
+        let xValue = chart.x[index]
+        let dateStr = dateFormatter.string(from: Date(timeIntervalSince1970: Double(xValue) / 1000))
+        let diff = overlayPoint.x - point.x
+        overlayViewController.data = lines.map { (line) -> (CGPoint, HistoryItem) in
+            let y = line.values[index]
+            let temp = chartView.point(from: (x: xValue, y: y))
+            let resultPoint = CGPoint(x: diff + temp.x, y: temp.y)
             let item = HistoryItem(
                 title: line.name,
                 value: String(line.values[index]),
                 color: line.color
             )
-            return (element, item)
-        })
-        overlayViewController.historyTitle = str
+            return (resultPoint, item)
+        }
+        overlayViewController.historyTitle = dateStr
+        overlayViewController.view.isHidden = false
     }
     
 }

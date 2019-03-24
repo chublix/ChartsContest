@@ -76,7 +76,7 @@ extension HistoryDataSource: UICollectionViewDelegate {
 extension HistoryDataSource: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = getWidth(for: items[indexPath.item])
+        let width = items.count > 1 ? getWidth(for: items[indexPath.item]) : collectionView.bounds.width
         return CGSize(width: width, height: collectionView.bounds.height)
     }
     
