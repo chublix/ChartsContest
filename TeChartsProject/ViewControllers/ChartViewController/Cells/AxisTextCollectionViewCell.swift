@@ -12,9 +12,10 @@ class AxisTextCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet private weak var titleLabel: UILabel!
 
-    func setup(with title: String, textAligment: NSTextAlignment = .left) {
+    func setup(with title: String, textColor: UIColor?, textAligment: NSTextAlignment = .left) {
         titleLabel.textAlignment = textAligment
         titleLabel.text = title
+        titleLabel.textColor = textColor
     }
     
 }

@@ -47,6 +47,12 @@ class ChartViewController: UIViewController {
         }
     }
     
+    var colors: Colors? {
+        didSet {
+            colorsUpdate()
+        }
+    }
+    
     private lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM d"
@@ -61,6 +67,12 @@ class ChartViewController: UIViewController {
         chartView.chart = chart
         updateXAxisLabels()
         updateYAxisLabels()
+        colorsUpdate()
+    }
+    
+    private func colorsUpdate() {
+        xAxisDataSource.colors = colors
+        yAxisDataSource.colors = colors
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

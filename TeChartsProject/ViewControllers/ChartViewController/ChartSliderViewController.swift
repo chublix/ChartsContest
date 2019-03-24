@@ -39,6 +39,8 @@ class ChartSliderViewController: UIViewController {
         didSet { chartView?.chart = chart }
     }
     
+    var colors: Colors!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         chartView.chart = chart
@@ -52,9 +54,9 @@ class ChartSliderViewController: UIViewController {
     
     private func setup() {
         maskLayer = CAShapeLayer()
-        maskLayer.fillColor = UIColor.lightGray.cgColor
+        maskLayer.fillColor = UIColor.black.cgColor
         maskLayer.fillRule = CAShapeLayerFillRule.evenOdd
-        maskLayer.opacity = 0.7
+        maskLayer.opacity = 0.12
         view.layer.addSublayer(maskLayer)
         view.addSubview(thumbView)
     }

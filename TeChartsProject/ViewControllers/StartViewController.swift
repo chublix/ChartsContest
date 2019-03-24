@@ -20,16 +20,33 @@ class StartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
-        chartsContainer?.charts.forEach({ (chart) in
+//        navigationItem.title = title
+        chartsContainer?.charts.enumerated().forEach({ (index, chart) in
             let vc = storyboard!.instantiateViewController(withIdentifier: "ChartContainerViewController") as! ChartContainerViewController
             vc.chart = chart
+            vc.textTitle = "Chart #\(index)"
             addChild(vc)
             scrollView.addSubview(vc.view)
             vc.view.frame = scrollView.bounds
             vc.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             vc.didMove(toParent: self)
         })
+        colorsUpdate()
+    }
+    
+    func colorsUpdate() {
+        let colors = ColorTheme.current.colors
+        view.backgroundColor = colors.mainBackground
+        (children as? [ChartContainerViewController])?.forEach { $0.colors = colors }
+        updateNavigationBar()
+    }
+    
+    private func updateNavigationBar() {
+        let theme = ColorTheme.current
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barStyle = theme == .light ? .default : .black
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: theme!.colors.lineText]
+        navigationController?.navigationBar.barTintColor = theme?.colors.mainBackground
     }
     
     override func viewDidLayoutSubviews() {
@@ -37,13 +54,15 @@ class StartViewController: UIViewController {
         updateFrames()
     }
     
+    @IBAction func change(_ sender: Any) {
+        let theme = ColorTheme.current
+        ColorTheme.current = theme == .light ? .dark : .light
+        colorsUpdate()
+    }
+    
     private func updateFrames() {
-//        (children as? [ChartContainerViewController])?.forEach({ (vc) in
-//            vc.view.frame =
-//        })
-        
         let size = (children as? [ChartContainerViewController])?.reduce(0, { (offset, vc) -> CGFloat in
-            let height = vc.tableView.contentSize.height//vc.view.bounds.height
+            let height = vc.tableView.contentSize.height
             vc.view.frame = CGRect(x: 0, y: offset, width: scrollView.bounds.width, height: height)
             return offset + height
         })
@@ -51,5 +70,3 @@ class StartViewController: UIViewController {
     }
 
 }
-
-

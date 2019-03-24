@@ -21,6 +21,10 @@ class YAxisCollectionViewDataSource: NSObject {
         didSet { collectionView?.reloadData() }
     }
     
+    var colors: Colors? {
+        didSet { collectionView?.reloadData() }
+    }
+    
 }
 
 
@@ -40,7 +44,7 @@ extension YAxisCollectionViewDataSource: UICollectionViewDataSource {
 extension YAxisCollectionViewDataSource: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        (cell as? AxisTextCollectionViewCell)?.setup(with: titles[indexPath.item], textAligment: .left)
+        (cell as? AxisTextCollectionViewCell)?.setup(with: titles[indexPath.item],textColor: colors?.axisText, textAligment: .left)
     }
     
 }

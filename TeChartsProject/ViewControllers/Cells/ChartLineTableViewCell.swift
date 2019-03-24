@@ -2,7 +2,7 @@
 //  ChartLineTableViewCell.swift
 //  TeChartsProject
 //
-//  Created by Elena Chekhova on 3/24/19.
+//  Created by Andriy Chuprina on 3/24/19.
 //  Copyright © 2019 Andriy Chuprina. All rights reserved.
 //
 
@@ -18,9 +18,10 @@ class ChartLineTableViewCell: UITableViewCell {
         indicatorView.layer.cornerRadius = 4
     }
     
-    func setup(with line: Line) {
+    func setup(with line: Line, textColor: UIColor?) {
         indicatorView.backgroundColor = line.color
         titleLabel.text = line.name
+        titleLabel.textColor = textColor
         accessoryType = line.enabled ? .checkmark : .none
     }
     

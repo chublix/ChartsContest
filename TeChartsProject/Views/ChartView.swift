@@ -25,10 +25,6 @@ class ChartView: UIView {
     override var bounds: CGRect {
         didSet { update() }
     }
-    
-//    private var firstX: Int = 0
-//    private var lastX: Int = 0
-//    private var greatestY: Int = 0
 
     private var minX: Int = 0
     private var sizeX: Int = 0

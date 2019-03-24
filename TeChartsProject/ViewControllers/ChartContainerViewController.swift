@@ -11,6 +11,9 @@ import UIKit
 
 class ChartContainerViewController: UITableViewController {
 
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var tableHeaderContentView: UIView!
+    
     private weak var chartViewController: ChartViewController! {
         didSet { chartViewController.chart = chart }
     }
@@ -28,16 +31,34 @@ class ChartContainerViewController: UITableViewController {
         }
     }
     
+    var textTitle: String?
+    
+    var colors: Colors? {
+        didSet { colorsUpdate() }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+        titleLabel?.text = textTitle?.uppercased()
+        colorsUpdate()
+    }
+    
+    func colorsUpdate() {
+        titleLabel.textColor = colors?.axisText
+        tableHeaderContentView.backgroundColor = colors?.contentBackground
+        chartViewController?.colors = colors
+        chartSliderViewController.colors = colors
+        tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? ChartViewController {
             chartViewController = vc
+            chartViewController.colors = ColorTheme.current.colors
         } else if let vc = segue.destination as? ChartSliderViewController {
             chartSliderViewController = vc
+            chartSliderViewController.colors = ColorTheme.current.colors
         }
     }
 
@@ -56,7 +77,8 @@ extension ChartContainerViewController {
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let line = chart?.lines[indexPath.row] else { return }
-        (cell as? ChartLineTableViewCell)?.setup(with: line)
+        (cell as? ChartLineTableViewCell)?.setup(with: line, textColor: colors?.lineText)
+        (cell as? ChartLineTableViewCell)?.backgroundColor = colors?.contentBackground
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

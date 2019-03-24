@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,7 @@
 		57DD351222356ECC001A48CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DD351022356ECC001A48CB /* LaunchScreen.storyboard */; };
 		AB8B2AD72244BC8900F15D58 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B2AD62244BC8900F15D58 /* StartViewController.swift */; };
 		ABC82E4D224780CA004C766F /* ChartLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC82E4C224780CA004C766F /* ChartLineTableViewCell.swift */; };
+		ABC82E552247BB36004C766F /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC82E542247BB36004C766F /* ColorTheme.swift */; };
 		ABD82B8D2246A062002909B8 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD82B8C2246A062002909B8 /* BackgroundView.swift */; };
 		ABD82B922246E11F002909B8 /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD82B902246E11F002909B8 /* HistoryCollectionViewCell.swift */; };
 		ABD82B932246E11F002909B8 /* HistoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABD82B912246E11F002909B8 /* HistoryCollectionViewCell.xib */; };
@@ -66,6 +67,7 @@
 		57DD351322356ECC001A48CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB8B2AD62244BC8900F15D58 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		ABC82E4C224780CA004C766F /* ChartLineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartLineTableViewCell.swift; sourceTree = "<group>"; };
+		ABC82E542247BB36004C766F /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
 		ABD82B8C2246A062002909B8 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		ABD82B902246E11F002909B8 /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		ABD82B912246E11F002909B8 /* HistoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			children = (
 				570231A222364AC7008E7C34 /* ChartModels.swift */,
 				57331AB42243D68B00D52844 /* JsonModels.swift */,
+				ABC82E542247BB36004C766F /* ColorTheme.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -253,7 +256,7 @@
 				};
 			};
 			buildConfigurationList = 57DD34FF22356ECA001A48CB /* Build configuration list for PBXProject "TeChartsProject" */;
-			compatibilityVersion = "Xcode 10.0";
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -300,6 +303,7 @@
 				57331AAD2243932B00D52844 /* ChartModels.swift in Sources */,
 				57DD350822356ECA001A48CB /* AppDelegate.swift in Sources */,
 				ABC82E4D224780CA004C766F /* ChartLineTableViewCell.swift in Sources */,
+				ABC82E552247BB36004C766F /* ColorTheme.swift in Sources */,
 				57331AAE2243933500D52844 /* UIColor+extensions.swift in Sources */,
 				57BFB04C2242D9710093D026 /* YAxisCollectionViewDataSource.swift in Sources */,
 				ABD82B972246ECF7002909B8 /* OverlayViewController.swift in Sources */,
