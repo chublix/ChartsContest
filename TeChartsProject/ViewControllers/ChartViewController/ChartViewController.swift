@@ -95,7 +95,15 @@ class ChartViewController: UIViewController {
         let count = CGFloat(chart?.x.count ?? 0)
         let step = count / CGFloat(scale * 6)
         let start = CGFloat(offset) * count
-        let list = (0...5).map { CGFloat($0) * step + start }.map { chart?.x[Int($0)] }.compactMap { $0 }
+        let list = (0...5).map { CGFloat($0) * step + start }.compactMap { value -> Int? in
+//            let index = chart?.x[Int($0)]
+            let index = Int(value)
+            if index < (chart?.x.count ?? 0) {
+                return chart?.x[index]
+            }
+            return nil
+        }//.compactMap { $0 }
+        
         let titles = list.map { dateFormatter.string(from: Date(timeIntervalSince1970: Double($0) / 1000)) }
         xAxisDataSource.titles = titles
     }

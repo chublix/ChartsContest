@@ -114,21 +114,19 @@ class ChartSliderViewController: UIViewController {
         guard let touch = touches.first, touch.view == thumbView else { return }
         let point = touch.location(in: view)
         let x = point.x + (fragment != .right ? -currentThumbOffset : currentThumbOffset)
-        let correction = fragment != .right ? thumbView.bounds.width : 0
-        guard x >= 0 && x <= (view.bounds.width - correction) else {
-            return
-        }
+        let correction = fragment != .right ? thumbView.bounds.width - 1 : 0
+        
+        guard x >= 0 && (x < (view.bounds.width - correction) || fragment == .left) else { return }
         
         if fragment == .left {
             thumbView.frame.size.width += (thumbView.frame.origin.x - x)
         } else if fragment == .right {
-            let step = x - thumbView.frame.origin.x
-            thumbView.frame.size.width = step
+            thumbView.frame.size.width = x - thumbView.frame.origin.x
         }
         
         thumbView.frame.size.width = thumbView.frame.size.width < minimumWidth ? minimumWidth : thumbView.frame.size.width
         
-        if fragment != .right {
+        if fragment != .right && ((x + thumbView.frame.width) < view.bounds.width) {
             thumbView.frame.origin.x = x
         }
         updateMaskLayerPath()
