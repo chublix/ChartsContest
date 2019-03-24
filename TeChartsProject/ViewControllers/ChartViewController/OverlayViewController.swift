@@ -36,6 +36,10 @@ class OverlayViewController: UIViewController {
         didSet { titleLabel?.text = historyTitle }
     }
     
+    var colors: Colors? {
+        didSet { colorsUpdate() }
+    }
+    
     private lazy var lineLayer = CAShapeLayer()
     private var pointsLayers: [CAShapeLayer] = [] {
         didSet {
@@ -49,11 +53,17 @@ class OverlayViewController: UIViewController {
         historyView.layer.cornerRadius = 5
         historyView.layer.zPosition = 10
         view.layer.addSublayer(lineLayer)
+        colorsUpdate()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         updateFrames()
+    }
+    
+    private func colorsUpdate() {
+        historyView?.backgroundColor = colors?.mainBackground
+        titleLabel?.textColor = colors?.historyTitle
     }
     
     private func updateFrames() {

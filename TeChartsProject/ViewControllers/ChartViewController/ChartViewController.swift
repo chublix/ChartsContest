@@ -73,11 +73,14 @@ class ChartViewController: UIViewController {
     private func colorsUpdate() {
         xAxisDataSource.colors = colors
         yAxisDataSource.colors = colors
+        overlayViewController?.colors = colors
+        backgroundView?.linesColor = colors?.chartLines ?? .lightGray
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? OverlayViewController {
             overlayViewController = vc
+            overlayViewController.colors = colors
         }
     }
     

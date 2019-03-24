@@ -76,7 +76,7 @@
                                     <rect key="frame" x="0.0" y="50" width="375" height="294"/>
                                     <subviews>
                                         <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NSH-GH-Eqd">
-                                            <rect key="frame" x="16" y="0.0" width="343" height="248"/>
+                                            <rect key="frame" x="16" y="8" width="343" height="240"/>
                                             <connections>
                                                 <segue destination="TM3-55-Pid" kind="embed" id="7Tf-0M-QNg"/>
                                             </connections>
@@ -99,7 +99,7 @@
                                         <constraint firstAttribute="trailing" secondItem="q2U-qv-j0P" secondAttribute="trailing" constant="16" id="I3Q-2x-xfE"/>
                                         <constraint firstItem="q2U-qv-j0P" firstAttribute="top" secondItem="NSH-GH-Eqd" secondAttribute="bottom" constant="8" id="RoL-rl-pUc"/>
                                         <constraint firstAttribute="bottom" secondItem="q2U-qv-j0P" secondAttribute="bottom" id="bMZ-xu-L4Y"/>
-                                        <constraint firstItem="NSH-GH-Eqd" firstAttribute="top" secondItem="Li9-Jl-JZb" secondAttribute="top" id="wDj-ah-Azi"/>
+                                        <constraint firstItem="NSH-GH-Eqd" firstAttribute="top" secondItem="Li9-Jl-JZb" secondAttribute="top" constant="8" id="wDj-ah-Azi"/>
                                     </constraints>
                                 </view>
                             </subviews>
