@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol ChartContainerViewControllerDelegate: class {
+    
+    func chartContainerViewControllerThemeColorSwitched(_ controller: ChartContainerViewController)
+    
+}
 
 class ChartContainerViewController: UITableViewController {
 
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var tableHeaderContentView: UIView!
+    @IBOutlet private weak var changeColorThemeButton: UIButton!
     
     private weak var chartViewController: ChartViewController! {
         didSet { chartViewController.chart = chart }
@@ -23,6 +29,8 @@ class ChartContainerViewController: UITableViewController {
             chartSliderViewController.chart = chart
         }
     }
+    
+    weak var delegate: ChartContainerViewControllerDelegate?
     
     var chart: Chart? {
         didSet {
@@ -39,7 +47,6 @@ class ChartContainerViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.tableFooterView = UIView()
         titleLabel?.text = textTitle?.uppercased()
         colorsUpdate()
     }
@@ -49,6 +56,9 @@ class ChartContainerViewController: UITableViewController {
         tableHeaderContentView.backgroundColor = colors?.contentBackground
         chartViewController?.colors = colors
         chartSliderViewController.colors = colors
+        changeColorThemeButton.backgroundColor = colors?.contentBackground
+        let buttonTitle = ColorTheme.current == .light ? "Switch to Night Mode" : "Switch to Day Mode"
+        changeColorThemeButton.setTitle(buttonTitle, for: .normal)
         tableView.separatorColor = colors?.tableSeparator
         tableView.reloadData()
     }
@@ -61,6 +71,10 @@ class ChartContainerViewController: UITableViewController {
             chartSliderViewController = vc
             chartSliderViewController.colors = ColorTheme.current.colors
         }
+    }
+    
+    @IBAction private func switchColorThemeTouched(_ sender: Any) {
+        delegate?.chartContainerViewControllerThemeColorSwitched(self)
     }
 
 }

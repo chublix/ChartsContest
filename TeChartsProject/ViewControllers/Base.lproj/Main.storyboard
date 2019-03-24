@@ -34,13 +34,7 @@
                             <constraint firstItem="mud-4N-cBp" firstAttribute="top" secondItem="oif-Yg-1Cc" secondAttribute="bottom" id="vHs-4o-5Cd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Statistics" id="96s-qc-lZi">
-                        <barButtonItem key="rightBarButtonItem" title="Change" id="zbq-hv-QaC">
-                            <connections>
-                                <action selector="change:" destination="Mqr-9k-cta" id="foA-Hm-N5k"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Statistics" id="96s-qc-lZi"/>
                     <connections>
                         <outlet property="scrollView" destination="oif-Yg-1Cc" id="4A7-4Q-ffY"/>
                     </connections>
@@ -114,6 +108,28 @@
                                 <constraint firstAttribute="bottom" secondItem="Li9-Jl-JZb" secondAttribute="bottom" id="opp-0h-ixD"/>
                             </constraints>
                         </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="gbh-lc-iil">
+                            <rect key="frame" x="0.0" y="416" width="375" height="120"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnP-dv-DDE">
+                                    <rect key="frame" x="0.0" y="38" width="375" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="QfB-sF-3QB"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="switchColorThemeTouched:" destination="gC5-Jb-u7A" eventType="touchUpInside" id="U7f-w2-LDN"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="bnP-dv-DDE" firstAttribute="centerY" secondItem="gbh-lc-iil" secondAttribute="centerY" id="F6w-bC-Xpf"/>
+                                <constraint firstAttribute="trailing" secondItem="bnP-dv-DDE" secondAttribute="trailing" id="INl-dt-91T"/>
+                                <constraint firstItem="bnP-dv-DDE" firstAttribute="leading" secondItem="gbh-lc-iil" secondAttribute="leading" id="wUe-ch-ecl"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChartLineTableViewCell" id="YLW-Fa-5cm" customClass="ChartLineTableViewCell" customModule="TeCharts_App" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="372" width="375" height="44"/>
@@ -160,6 +176,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="changeColorThemeButton" destination="bnP-dv-DDE" id="lgk-9Y-qs0"/>
                         <outlet property="tableHeaderContentView" destination="Li9-Jl-JZb" id="Va0-v3-8EG"/>
                         <outlet property="titleLabel" destination="xYd-eI-DMI" id="ntr-7r-Iid"/>
                     </connections>

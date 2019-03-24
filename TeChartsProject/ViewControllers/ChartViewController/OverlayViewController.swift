@@ -65,6 +65,7 @@ class OverlayViewController: UIViewController {
         historyView?.backgroundColor = colors?.mainBackground
         titleLabel?.textColor = colors?.historyTitle
         lineColor = colors?.mainAxis ?? .clear
+        pointFillColor = colors?.contentBackground ?? .clear
     }
     
     private func updateFrames() {

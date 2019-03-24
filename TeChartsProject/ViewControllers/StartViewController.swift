@@ -24,6 +24,7 @@ class StartViewController: UIViewController {
         chartsContainer?.charts.enumerated().forEach({ (index, chart) in
             let vc = storyboard!.instantiateViewController(withIdentifier: "ChartContainerViewController") as! ChartContainerViewController
             vc.chart = chart
+            vc.delegate = self
             vc.textTitle = "Chart #\(index)"
             addChild(vc)
             scrollView.addSubview(vc.view)
@@ -54,12 +55,6 @@ class StartViewController: UIViewController {
         updateFrames()
     }
     
-    @IBAction func change(_ sender: Any) {
-        let theme = ColorTheme.current
-        ColorTheme.current = theme == .light ? .dark : .light
-        colorsUpdate()
-    }
-    
     private func updateFrames() {
         let size = (children as? [ChartContainerViewController])?.reduce(0, { (offset, vc) -> CGFloat in
             let height = vc.tableView.contentSize.height
@@ -69,4 +64,15 @@ class StartViewController: UIViewController {
         scrollView.contentSize.height = size ?? 0
     }
 
+}
+
+
+extension StartViewController: ChartContainerViewControllerDelegate {
+    
+    func chartContainerViewControllerThemeColorSwitched(_ controller: ChartContainerViewController) {
+        let theme = ColorTheme.current
+        ColorTheme.current = theme == .light ? .dark : .light
+        colorsUpdate()
+    }
+    
 }
