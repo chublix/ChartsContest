@@ -3,37 +3,35 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		570231A322364AC7008E7C34 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570231A222364AC7008E7C34 /* Types.swift */; };
-		570231A622366053008E7C34 /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570231A522366053008E7C34 /* UIColor+extensions.swift */; };
 		570463C8223BB24200E8E81E /* chart_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 570463C7223BB24200E8E81E /* chart_data.json */; };
-		57C27A35223E81D200B8D6E8 /* BackgroundLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C27A34223E81D200B8D6E8 /* BackgroundLayer.swift */; };
-		57C744FC2241295400683DCA /* ChartTextsLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C744FB2241295400683DCA /* ChartTextsLayer.swift */; };
+		57331AAD2243932B00D52844 /* ChartModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570231A222364AC7008E7C34 /* ChartModels.swift */; };
+		57331AAE2243933500D52844 /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570231A522366053008E7C34 /* UIColor+extensions.swift */; };
+		57331AB0224397C900D52844 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57331AAF224397C900D52844 /* ChartView.swift */; };
+		57331AB52243D68B00D52844 /* JsonModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57331AB42243D68B00D52844 /* JsonModels.swift */; };
+		579D940B22450DC500FD9692 /* ChartSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579D940A22450DC500FD9692 /* ChartSliderViewController.swift */; };
+		57BFB0422242D81A0093D026 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFB0412242D81A0093D026 /* ChartViewController.swift */; };
+		57BFB0462242D83E0093D026 /* AxisTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFB0442242D83E0093D026 /* AxisTextCollectionViewCell.swift */; };
+		57BFB0472242D83E0093D026 /* AxisTextCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57BFB0452242D83E0093D026 /* AxisTextCollectionViewCell.xib */; };
+		57BFB04A2242D9640093D026 /* XAxisCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFB0492242D9640093D026 /* XAxisCollectionViewDataSource.swift */; };
+		57BFB04C2242D9710093D026 /* YAxisCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFB04B2242D9710093D026 /* YAxisCollectionViewDataSource.swift */; };
 		57DD350822356ECA001A48CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DD350722356ECA001A48CB /* AppDelegate.swift */; };
-		57DD350A22356ECA001A48CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DD350922356ECA001A48CB /* ViewController.swift */; };
+		57DD350A22356ECA001A48CB /* ChartContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DD350922356ECA001A48CB /* ChartContainerViewController.swift */; };
 		57DD350D22356ECA001A48CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DD350B22356ECA001A48CB /* Main.storyboard */; };
 		57DD350F22356ECC001A48CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57DD350E22356ECC001A48CB /* Assets.xcassets */; };
 		57DD351222356ECC001A48CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DD351022356ECC001A48CB /* LaunchScreen.storyboard */; };
-		57DD353D22359568001A48CB /* ChartLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 57DD353B22359568001A48CB /* ChartLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		57DD354022359568001A48CB /* ChartLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57DD353922359568001A48CB /* ChartLib.framework */; };
-		57DD354122359568001A48CB /* ChartLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57DD353922359568001A48CB /* ChartLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		57DD354622359583001A48CB /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DD354522359583001A48CB /* ChartView.swift */; };
-		57E3DE452237ECF500E43EEB /* points.json in Resources */ = {isa = PBXBuildFile; fileRef = 57E3DE432237EB3100E43EEB /* points.json */; };
-		57E3DE472237F07500E43EEB /* points1.json in Resources */ = {isa = PBXBuildFile; fileRef = 57E3DE462237F07500E43EEB /* points1.json */; };
+		AB8B2AD72244BC8900F15D58 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B2AD62244BC8900F15D58 /* StartViewController.swift */; };
+		ABC82E4D224780CA004C766F /* ChartLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC82E4C224780CA004C766F /* ChartLineTableViewCell.swift */; };
+		ABC82E552247BB36004C766F /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC82E542247BB36004C766F /* ColorTheme.swift */; };
+		ABD82B8D2246A062002909B8 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD82B8C2246A062002909B8 /* BackgroundView.swift */; };
+		ABD82B922246E11F002909B8 /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD82B902246E11F002909B8 /* HistoryCollectionViewCell.swift */; };
+		ABD82B932246E11F002909B8 /* HistoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABD82B912246E11F002909B8 /* HistoryCollectionViewCell.xib */; };
+		ABD82B952246E2B4002909B8 /* HistoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD82B942246E2B4002909B8 /* HistoryDataSource.swift */; };
+		ABD82B972246ECF7002909B8 /* OverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD82B962246ECF7002909B8 /* OverlayViewController.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		57DD353E22359568001A48CB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 57DD34FC22356ECA001A48CB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 57DD353822359568001A48CB;
-			remoteInfo = ChartLib;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		57DD352F22357834001A48CB /* Embed Frameworks */ = {
@@ -42,7 +40,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				57DD354122359568001A48CB /* ChartLib.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,36 +47,36 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		570231A222364AC7008E7C34 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		570231A222364AC7008E7C34 /* ChartModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartModels.swift; sourceTree = "<group>"; };
 		570231A522366053008E7C34 /* UIColor+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extensions.swift"; sourceTree = "<group>"; };
 		570463C7223BB24200E8E81E /* chart_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chart_data.json; sourceTree = "<group>"; };
-		57C27A34223E81D200B8D6E8 /* BackgroundLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundLayer.swift; sourceTree = "<group>"; };
-		57C744FB2241295400683DCA /* ChartTextsLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTextsLayer.swift; sourceTree = "<group>"; };
-		57DD350422356ECA001A48CB /* TeChartsProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeChartsProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		57331AAF224397C900D52844 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		57331AB42243D68B00D52844 /* JsonModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonModels.swift; sourceTree = "<group>"; };
+		579D940A22450DC500FD9692 /* ChartSliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartSliderViewController.swift; sourceTree = "<group>"; };
+		57BFB0412242D81A0093D026 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		57BFB0442242D83E0093D026 /* AxisTextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisTextCollectionViewCell.swift; sourceTree = "<group>"; };
+		57BFB0452242D83E0093D026 /* AxisTextCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AxisTextCollectionViewCell.xib; sourceTree = "<group>"; };
+		57BFB0492242D9640093D026 /* XAxisCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAxisCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		57BFB04B2242D9710093D026 /* YAxisCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YAxisCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		57DD350422356ECA001A48CB /* TeCharts App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TeCharts App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57DD350722356ECA001A48CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		57DD350922356ECA001A48CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		57DD350922356ECA001A48CB /* ChartContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartContainerViewController.swift; sourceTree = "<group>"; };
 		57DD350C22356ECA001A48CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57DD350E22356ECC001A48CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57DD351122356ECC001A48CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57DD351322356ECC001A48CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		57DD353922359568001A48CB /* ChartLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChartLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		57DD353B22359568001A48CB /* ChartLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChartLib.h; sourceTree = "<group>"; };
-		57DD353C22359568001A48CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		57DD354522359583001A48CB /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
-		57E3DE432237EB3100E43EEB /* points.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = points.json; sourceTree = "<group>"; };
-		57E3DE462237F07500E43EEB /* points1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = points1.json; sourceTree = "<group>"; };
+		AB8B2AD62244BC8900F15D58 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		ABC82E4C224780CA004C766F /* ChartLineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartLineTableViewCell.swift; sourceTree = "<group>"; };
+		ABC82E542247BB36004C766F /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
+		ABD82B8C2246A062002909B8 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		ABD82B902246E11F002909B8 /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		ABD82B912246E11F002909B8 /* HistoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		ABD82B942246E2B4002909B8 /* HistoryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDataSource.swift; sourceTree = "<group>"; };
+		ABD82B962246ECF7002909B8 /* OverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		57DD350122356ECA001A48CB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				57DD354022359568001A48CB /* ChartLib.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		57DD353622359568001A48CB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -89,36 +86,70 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		570231A422366043008E7C34 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				570231A72236605E008E7C34 /* UIKit */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		570231A72236605E008E7C34 /* UIKit */ = {
+		57331AB12243D05300D52844 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				570231A522366053008E7C34 /* UIColor+extensions.swift */,
 			);
-			path = UIKit;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
-		57C27A33223E81AF00B8D6E8 /* Sublayers */ = {
+		57331AB22243D06300D52844 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				57C27A34223E81D200B8D6E8 /* BackgroundLayer.swift */,
-				57C744FB2241295400683DCA /* ChartTextsLayer.swift */,
+				570231A222364AC7008E7C34 /* ChartModels.swift */,
+				57331AB42243D68B00D52844 /* JsonModels.swift */,
+				ABC82E542247BB36004C766F /* ColorTheme.swift */,
 			);
-			path = Sublayers;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		57331AB32243D07300D52844 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ABD82B8C2246A062002909B8 /* BackgroundView.swift */,
+				57331AAF224397C900D52844 /* ChartView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		57BFB0402242D7FD0093D026 /* ChartViewController */ = {
+			isa = PBXGroup;
+			children = (
+				57BFB0432242D81F0093D026 /* Cells */,
+				57BFB0482242D9190093D026 /* DataSources */,
+				57BFB0412242D81A0093D026 /* ChartViewController.swift */,
+				579D940A22450DC500FD9692 /* ChartSliderViewController.swift */,
+				ABD82B962246ECF7002909B8 /* OverlayViewController.swift */,
+			);
+			path = ChartViewController;
+			sourceTree = "<group>";
+		};
+		57BFB0432242D81F0093D026 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				57BFB0442242D83E0093D026 /* AxisTextCollectionViewCell.swift */,
+				57BFB0452242D83E0093D026 /* AxisTextCollectionViewCell.xib */,
+				ABD82B902246E11F002909B8 /* HistoryCollectionViewCell.swift */,
+				ABD82B912246E11F002909B8 /* HistoryCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		57BFB0482242D9190093D026 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				57BFB0492242D9640093D026 /* XAxisCollectionViewDataSource.swift */,
+				57BFB04B2242D9710093D026 /* YAxisCollectionViewDataSource.swift */,
+				ABD82B942246E2B4002909B8 /* HistoryDataSource.swift */,
+			);
+			path = DataSources;
 			sourceTree = "<group>";
 		};
 		57DD34FB22356ECA001A48CB = {
 			isa = PBXGroup;
 			children = (
 				57DD350622356ECA001A48CB /* TeChartsProject */,
-				57DD353A22359568001A48CB /* ChartLib */,
 				57DD350522356ECA001A48CB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -126,8 +157,7 @@
 		57DD350522356ECA001A48CB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				57DD350422356ECA001A48CB /* TeChartsProject.app */,
-				57DD353922359568001A48CB /* ChartLib.framework */,
+				57DD350422356ECA001A48CB /* TeCharts App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,6 +167,9 @@
 			children = (
 				57DD350722356ECA001A48CB /* AppDelegate.swift */,
 				57DD351D223572D8001A48CB /* ViewControllers */,
+				57331AB32243D07300D52844 /* Views */,
+				57331AB22243D06300D52844 /* Models */,
+				57331AB12243D05300D52844 /* Extensions */,
 				57DD351B223572A2001A48CB /* Assets */,
 				57DD351C223572BF001A48CB /* Supporting FIles */,
 			);
@@ -147,8 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				570463C7223BB24200E8E81E /* chart_data.json */,
-				57E3DE462237F07500E43EEB /* points1.json */,
-				57E3DE432237EB3100E43EEB /* points.json */,
 				57DD350E22356ECC001A48CB /* Assets.xcassets */,
 			);
 			path = Assets;
@@ -166,37 +197,24 @@
 		57DD351D223572D8001A48CB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				57DD350922356ECA001A48CB /* ViewController.swift */,
+				ABC82E4B22478098004C766F /* Cells */,
+				57BFB0402242D7FD0093D026 /* ChartViewController */,
+				57DD350922356ECA001A48CB /* ChartContainerViewController.swift */,
+				AB8B2AD62244BC8900F15D58 /* StartViewController.swift */,
 				57DD350B22356ECA001A48CB /* Main.storyboard */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		57DD353A22359568001A48CB /* ChartLib */ = {
+		ABC82E4B22478098004C766F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				57C27A33223E81AF00B8D6E8 /* Sublayers */,
-				570231A422366043008E7C34 /* Extensions */,
-				570231A222364AC7008E7C34 /* Types.swift */,
-				57DD354522359583001A48CB /* ChartView.swift */,
-				57DD353B22359568001A48CB /* ChartLib.h */,
-				57DD353C22359568001A48CB /* Info.plist */,
+				ABC82E4C224780CA004C766F /* ChartLineTableViewCell.swift */,
 			);
-			path = ChartLib;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		57DD353422359568001A48CB /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				57DD353D22359568001A48CB /* ChartLib.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		57DD350322356ECA001A48CB /* TeChartsProject */ = {
@@ -211,30 +229,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				57DD353F22359568001A48CB /* PBXTargetDependency */,
 			);
 			name = TeChartsProject;
 			productName = TeChartsProject;
-			productReference = 57DD350422356ECA001A48CB /* TeChartsProject.app */;
+			productReference = 57DD350422356ECA001A48CB /* TeCharts App.app */;
 			productType = "com.apple.product-type.application";
-		};
-		57DD353822359568001A48CB /* ChartLib */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 57DD354222359568001A48CB /* Build configuration list for PBXNativeTarget "ChartLib" */;
-			buildPhases = (
-				57DD353422359568001A48CB /* Headers */,
-				57DD353522359568001A48CB /* Sources */,
-				57DD353622359568001A48CB /* Frameworks */,
-				57DD353722359568001A48CB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ChartLib;
-			productName = ChartLib;
-			productReference = 57DD353922359568001A48CB /* ChartLib.framework */;
-			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -254,14 +253,10 @@
 							};
 						};
 					};
-					57DD353822359568001A48CB = {
-						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1010;
-					};
 				};
 			};
 			buildConfigurationList = 57DD34FF22356ECA001A48CB /* Build configuration list for PBXProject "TeChartsProject" */;
-			compatibilityVersion = "Xcode 10.0";
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -274,7 +269,6 @@
 			projectRoot = "";
 			targets = (
 				57DD350322356ECA001A48CB /* TeChartsProject */,
-				57DD353822359568001A48CB /* ChartLib */,
 			);
 		};
 /* End PBXProject section */
@@ -284,19 +278,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57E3DE472237F07500E43EEB /* points1.json in Resources */,
 				57DD351222356ECC001A48CB /* LaunchScreen.storyboard in Resources */,
 				570463C8223BB24200E8E81E /* chart_data.json in Resources */,
 				57DD350F22356ECC001A48CB /* Assets.xcassets in Resources */,
+				ABD82B932246E11F002909B8 /* HistoryCollectionViewCell.xib in Resources */,
 				57DD350D22356ECA001A48CB /* Main.storyboard in Resources */,
-				57E3DE452237ECF500E43EEB /* points.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		57DD353722359568001A48CB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				57BFB0472242D83E0093D026 /* AxisTextCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,32 +294,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57DD350A22356ECA001A48CB /* ViewController.swift in Sources */,
+				57BFB0462242D83E0093D026 /* AxisTextCollectionViewCell.swift in Sources */,
+				57DD350A22356ECA001A48CB /* ChartContainerViewController.swift in Sources */,
+				57331AB0224397C900D52844 /* ChartView.swift in Sources */,
+				57BFB04A2242D9640093D026 /* XAxisCollectionViewDataSource.swift in Sources */,
+				57331AB52243D68B00D52844 /* JsonModels.swift in Sources */,
+				AB8B2AD72244BC8900F15D58 /* StartViewController.swift in Sources */,
+				57331AAD2243932B00D52844 /* ChartModels.swift in Sources */,
 				57DD350822356ECA001A48CB /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		57DD353522359568001A48CB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				57C744FC2241295400683DCA /* ChartTextsLayer.swift in Sources */,
-				57DD354622359583001A48CB /* ChartView.swift in Sources */,
-				57C27A35223E81D200B8D6E8 /* BackgroundLayer.swift in Sources */,
-				570231A322364AC7008E7C34 /* Types.swift in Sources */,
-				570231A622366053008E7C34 /* UIColor+extensions.swift in Sources */,
+				ABC82E4D224780CA004C766F /* ChartLineTableViewCell.swift in Sources */,
+				ABC82E552247BB36004C766F /* ColorTheme.swift in Sources */,
+				57331AAE2243933500D52844 /* UIColor+extensions.swift in Sources */,
+				57BFB04C2242D9710093D026 /* YAxisCollectionViewDataSource.swift in Sources */,
+				ABD82B972246ECF7002909B8 /* OverlayViewController.swift in Sources */,
+				ABD82B922246E11F002909B8 /* HistoryCollectionViewCell.swift in Sources */,
+				ABD82B8D2246A062002909B8 /* BackgroundView.swift in Sources */,
+				579D940B22450DC500FD9692 /* ChartSliderViewController.swift in Sources */,
+				57BFB0422242D81A0093D026 /* ChartViewController.swift in Sources */,
+				ABD82B952246E2B4002909B8 /* HistoryDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		57DD353F22359568001A48CB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 57DD353822359568001A48CB /* ChartLib */;
-			targetProxy = 57DD353E22359568001A48CB /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		57DD350B22356ECA001A48CB /* Main.storyboard */ = {
@@ -478,16 +461,16 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 228JS57M4U;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "TeChartsProject/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.chuprina.TeChartsProject;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = me.chekhova.chartsproject;
+				PRODUCT_NAME = "TeCharts App";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -499,83 +482,20 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 228JS57M4U;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = AGHA3VWM5L;
 				INFOPLIST_FILE = "TeChartsProject/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.chuprina.TeChartsProject;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PRODUCT_BUNDLE_IDENTIFIER = me.chekhova.chartsproject;
+				PRODUCT_NAME = "TeCharts App";
+				PROVISIONING_PROFILE_SPECIFIER = "TeCharts App AdHoc profile";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		57DD354322359568001A48CB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ChartLib/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.chuprina.ChartLib;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		57DD354422359568001A48CB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ChartLib/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.chuprina.ChartLib;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -596,15 +516,6 @@
 			buildConfigurations = (
 				57DD351722356ECC001A48CB /* Debug */,
 				57DD351822356ECC001A48CB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		57DD354222359568001A48CB /* Build configuration list for PBXNativeTarget "ChartLib" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				57DD354322359568001A48CB /* Debug */,
-				57DD354422359568001A48CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
