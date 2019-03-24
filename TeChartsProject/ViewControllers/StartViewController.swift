@@ -9,10 +9,8 @@
 import UIKit
 
 class StartViewController: UIViewController {
-
-    @IBOutlet private weak var tableView: UITableView! {
-        didSet { tableView.tableFooterView = UIView() }
-    }
+    
+    @IBOutlet private weak var scrollView: UIScrollView!
     
     private lazy var chartsContainer: ChartsContainer? = {
         let url = Bundle.main.url(forResource: "chart_data", withExtension: "json")
@@ -20,35 +18,38 @@ class StartViewController: UIViewController {
         return ChartsContainer(from: data)
     }()
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? ChartContainerViewController {
-            vc.chart = sender as? Chart
-        }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .blue
+        chartsContainer?.charts.forEach({ (chart) in
+            let vc = storyboard!.instantiateViewController(withIdentifier: "ChartContainerViewController") as! ChartContainerViewController
+            vc.chart = chart
+            addChild(vc)
+            scrollView.addSubview(vc.view)
+            vc.view.frame = scrollView.bounds
+            vc.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            vc.didMove(toParent: self)
+        })
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        updateFrames()
+    }
+    
+    private func updateFrames() {
+//        (children as? [ChartContainerViewController])?.forEach({ (vc) in
+//            vc.view.frame =
+//        })
+        
+        let size = (children as? [ChartContainerViewController])?.reduce(0, { (offset, vc) -> CGFloat in
+            let height = vc.tableView.contentSize.height//vc.view.bounds.height
+            vc.view.frame = CGRect(x: 0, y: offset, width: scrollView.bounds.width, height: height)
+            return offset + height
+        })
+        scrollView.contentSize.height = size ?? 0
     }
 
 }
 
-extension StartViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chartsContainer?.charts.count ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-    }
-    
-}
 
-extension StartViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.textLabel?.text = "Chart #\(indexPath.row)"
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let chart = chartsContainer?.charts[indexPath.row]
-        performSegue(withIdentifier: "showChart", sender: chart)
-    }
-    
-}

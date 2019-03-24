@@ -54,6 +54,7 @@ class ChartViewController: UIViewController {
     }()
     
     private var overlayViewController: OverlayViewController!
+    private var startTouchPoint: CGPoint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,14 +98,19 @@ class ChartViewController: UIViewController {
 extension ChartViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first, let chart = chart else { return }
-        
+        startTouchPoint = touches.first?.location(in: chartView)
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first  else { return }
         let point = touch.location(in: chartView)
-        
+        guard startTouchPoint?.equalTo(point) == true else { return }
+        guard let chart = chart else { return }
+
         let index = Int((point.x / chartView.bounds.width) * CGFloat(chart.x.count))
         let lines = chart.lines.filter { $0.enabled }
         guard lines.count > 0 else { return }
-        
+
         let overlayPoint = touch.location(in: overlayViewController.view)
         let xValue = chart.x[index]
         let dateStr = dateFormatter.string(from: Date(timeIntervalSince1970: Double(xValue) / 1000))
@@ -122,6 +128,10 @@ extension ChartViewController {
         }
         overlayViewController.historyTitle = dateStr
         overlayViewController.view.isHidden = false
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        startTouchPoint = nil
     }
     
 }

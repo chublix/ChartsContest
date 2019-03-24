@@ -10,72 +10,47 @@
     </dependencies>
     <scenes>
         <!--Charts-->
-        <scene sceneID="ejB-h8-V6t">
+        <scene sceneID="hnx-a4-bKc">
             <objects>
-                <viewController id="Eh6-dO-kQL" customClass="StartViewController" customModule="TeCharts_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Charts" id="Mqr-9k-cta" customClass="StartViewController" customModule="TeCharts_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rCH-Vw-wBC"/>
-                        <viewControllerLayoutGuide type="bottom" id="8Ak-9d-XIs"/>
+                        <viewControllerLayoutGuide type="top" id="2tQ-W8-kg7"/>
+                        <viewControllerLayoutGuide type="bottom" id="mud-4N-cBp"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="5FJ-L7-SuV">
+                    <view key="view" contentMode="scaleToFill" id="ixx-Bp-wQQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ezT-6o-BC8">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oif-Yg-1Cc">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" textLabel="oVy-Qa-8NY" style="IBUITableViewCellStyleDefault" id="LDu-Z8-x8O">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LDu-Z8-x8O" id="AJT-Ii-pq9">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oVy-Qa-8NY">
-                                                    <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="Eh6-dO-kQL" id="Dm7-4G-Qr0"/>
-                                    <outlet property="delegate" destination="Eh6-dO-kQL" id="Yp3-hh-Gfz"/>
-                                </connections>
-                            </tableView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8Ak-9d-XIs" firstAttribute="top" secondItem="ezT-6o-BC8" secondAttribute="bottom" id="6kD-4s-Vb3"/>
-                            <constraint firstAttribute="trailing" secondItem="ezT-6o-BC8" secondAttribute="trailing" id="WmN-5g-kgD"/>
-                            <constraint firstItem="ezT-6o-BC8" firstAttribute="top" secondItem="rCH-Vw-wBC" secondAttribute="bottom" id="ZsI-gn-Gao"/>
-                            <constraint firstItem="ezT-6o-BC8" firstAttribute="leading" secondItem="5FJ-L7-SuV" secondAttribute="leading" id="bbr-Rt-IoE"/>
+                            <constraint firstItem="oif-Yg-1Cc" firstAttribute="top" secondItem="2tQ-W8-kg7" secondAttribute="bottom" id="Ydp-v4-HPQ"/>
+                            <constraint firstAttribute="trailing" secondItem="oif-Yg-1Cc" secondAttribute="trailing" id="cda-vZ-2Yg"/>
+                            <constraint firstItem="oif-Yg-1Cc" firstAttribute="leading" secondItem="ixx-Bp-wQQ" secondAttribute="leading" id="i6v-a3-v7H"/>
+                            <constraint firstItem="mud-4N-cBp" firstAttribute="top" secondItem="oif-Yg-1Cc" secondAttribute="bottom" id="vHs-4o-5Cd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Charts" id="ZoV-Fk-Tmm"/>
+                    <navigationItem key="navigationItem" id="96s-qc-lZi"/>
                     <connections>
-                        <outlet property="tableView" destination="ezT-6o-BC8" id="khA-pZ-Sxc"/>
-                        <segue destination="gC5-Jb-u7A" kind="show" identifier="showChart" id="0Hu-WT-4JX"/>
+                        <outlet property="scrollView" destination="oif-Yg-1Cc" id="4A7-4Q-ffY"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kKg-kL-phJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I5G-ap-BrC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="200.80000000000001" y="125.4872563718141"/>
+            <point key="canvasLocation" x="220" y="125"/>
         </scene>
         <!--Chart Container View Controller-->
         <scene sceneID="LVq-PK-MIi">
             <objects>
-                <tableViewController id="gC5-Jb-u7A" customClass="ChartContainerViewController" customModule="TeCharts_App" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ChartContainerViewController" id="gC5-Jb-u7A" customClass="ChartContainerViewController" customModule="TeCharts_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EKX-jR-eAE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <inset key="separatorInset" minX="48" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="nLB-0c-H2S">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="302"/>
@@ -97,7 +72,7 @@
                                     </connections>
                                 </containerView>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="q2U-qv-j0P" secondAttribute="trailing" constant="16" id="0tU-Xy-BjU"/>
                                 <constraint firstAttribute="bottom" secondItem="q2U-qv-j0P" secondAttribute="bottom" constant="8" id="1ID-yg-8n5"/>
@@ -141,6 +116,7 @@
                                         <constraint firstItem="6D7-fQ-BQZ" firstAttribute="leading" secondItem="TOL-OD-hpO" secondAttribute="trailing" constant="16" id="qnh-rg-oLe"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="indicatorView" destination="TOL-OD-hpO" id="6Ah-6f-wS6"/>
                                     <outlet property="titleLabel" destination="6D7-fQ-BQZ" id="QFu-VA-NVt"/>
@@ -174,7 +150,7 @@
                                 <subviews>
                                     <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Jo-yS-vua" customClass="BackgroundView" customModule="TeCharts_App">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="248"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="linesCount">
                                                 <integer key="value" value="6"/>
@@ -212,6 +188,7 @@
                                         </constraints>
                                     </scrollView>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="ygV-Q8-bnh" secondAttribute="bottom" id="37n-0I-vh6"/>
                                     <constraint firstItem="ygV-Q8-bnh" firstAttribute="leading" secondItem="oOx-W9-yFv" secondAttribute="leading" id="3Cr-IC-DOr"/>
@@ -268,7 +245,7 @@
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ykg-bS-8HS" firstAttribute="top" secondItem="KLf-8C-R1N" secondAttribute="bottom" id="0i7-0Q-pYs"/>
                             <constraint firstItem="Hvo-98-N2U" firstAttribute="top" secondItem="ykg-bS-8HS" secondAttribute="bottom" constant="7" id="1Ao-YD-anC"/>
@@ -324,7 +301,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Eh6-dO-kQL" kind="relationship" relationship="rootViewController" id="RoY-hV-3h7"/>
+                        <segue destination="Mqr-9k-cta" kind="relationship" relationship="rootViewController" id="E4R-nU-p15"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jig-8P-vQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -353,7 +330,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="TcQ-zk-BLT" secondAttribute="bottom" constant="1.5" id="4Ig-yA-CJl"/>
                             <constraint firstItem="TcQ-zk-BLT" firstAttribute="leading" secondItem="hhq-Nj-Kvz" secondAttribute="leading" id="Dx8-NI-0dh"/>
