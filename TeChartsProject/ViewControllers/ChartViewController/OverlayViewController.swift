@@ -63,10 +63,13 @@ class OverlayViewController: UIViewController {
     
     private func update() {
         let x = data[0].0.x
+        if x < 5 || x > lineLayer.bounds.width - 5 {
+            view.isHidden = true
+            return
+        }
         
         historyDataSource.items = data.map { $0.1 }
-        collectionViewWidthConstraint.constant = historyDataSource.contentWidth > 50 ? historyDataSource.contentWidth : 50
-        historyOffsetViewConstraint.constant = x - view.bounds.midX 
+        updateHistoryViewFrame(for: x)
         
         let path = UIBezierPath()
         path.move(to: CGPoint(x: x, y: 0))
@@ -81,6 +84,20 @@ class OverlayViewController: UIViewController {
             pointLayer.fillColor = pointFillColor.cgColor
             pointLayer.path = path.cgPath
         }
+    }
+    
+    private func updateHistoryViewFrame(for x: CGFloat) {
+        let contentWidth = historyDataSource.contentWidth
+        collectionViewWidthConstraint.constant = contentWidth > 50 ? contentWidth : 50
+        let halfWidth = historyView.bounds.width / 2
+        let maxOffset = view.bounds.width - historyView.bounds.width
+        var offset = x - halfWidth
+        if offset > maxOffset {
+            offset = maxOffset
+        } else if offset < halfWidth {
+            offset = 0
+        }
+        historyOffsetViewConstraint.constant = offset
     }
 
 }
