@@ -462,16 +462,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ARP9W542DM;
 				INFOPLIST_FILE = "TeChartsProject/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.chekhova.chartsproject;
+				PRODUCT_BUNDLE_IDENTIFIER = me.chuprina.chartsproject;
 				PRODUCT_NAME = "TeCharts App";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Te Charts App Development Profile";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -482,18 +482,18 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = AGHA3VWM5L;
+				DEVELOPMENT_TEAM = ARP9W542DM;
 				INFOPLIST_FILE = "TeChartsProject/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.chekhova.chartsproject;
+				PRODUCT_BUNDLE_IDENTIFIER = me.chuprina.chartsproject;
 				PRODUCT_NAME = "TeCharts App";
-				PROVISIONING_PROFILE_SPECIFIER = "TeCharts App AdHoc profile";
+				PROVISIONING_PROFILE_SPECIFIER = "Te Charts App Development Profile";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
