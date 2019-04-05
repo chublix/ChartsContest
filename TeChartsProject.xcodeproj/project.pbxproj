@@ -247,6 +247,7 @@
 				TargetAttributes = {
 					57DD350322356ECA001A48CB = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
@@ -472,7 +473,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.chuprina.chartsproject;
 				PRODUCT_NAME = "TeCharts App";
 				PROVISIONING_PROFILE_SPECIFIER = "Te Charts App Development Profile";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -494,7 +495,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.chuprina.chartsproject;
 				PRODUCT_NAME = "TeCharts App";
 				PROVISIONING_PROFILE_SPECIFIER = "Te Charts App Development Profile";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
