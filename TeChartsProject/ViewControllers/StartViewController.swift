@@ -20,8 +20,8 @@ class StartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        navigationItem.title = title
-        chartsContainer?.charts.enumerated().forEach({ (index, chart) in
+        let charts = [chartsContainer?.charts[0]] ?? []
+        charts.enumerated().forEach({ (index, chart) in
             let vc = storyboard!.instantiateViewController(withIdentifier: "ChartContainerViewController") as! ChartContainerViewController
             vc.chart = chart
             vc.delegate = self

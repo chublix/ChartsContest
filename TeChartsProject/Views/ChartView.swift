@@ -26,10 +26,10 @@ class ChartView: UIView {
         didSet { update() }
     }
 
-    private var minX: Int = 0
-    private var sizeX: Int = 0
-    private var minY: Int = 0
-    private var sizeY: Int = 0
+    private var minX: UInt64 = 0
+    private var sizeX: UInt64 = 0
+    private var minY: UInt64 = 0
+    private var sizeY: UInt64 = 0
     
     private var chartsSublayers: [CAShapeLayer]? {
         get { return layer.sublayers as? [CAShapeLayer] }
@@ -55,7 +55,7 @@ class ChartView: UIView {
     }
     
     private func createPath(for line: Line) -> UIBezierPath? {
-        guard let xValues = chart?.x else { return nil }
+        guard let xValues = chart?.x, !xValues.isEmpty else { return nil }
         let sequence = Array(zip(xValues, line.values))
         let first = sequence[0]
         let path = UIBezierPath()
@@ -75,14 +75,13 @@ class ChartView: UIView {
         sizeY = (allYValues.max() ?? 0) - minY
         minX = chart.x.first ?? 0
         sizeX = (chart.x.last ?? 0) - minX
-        
         if chartsSublayers?.count != lines.count {
             chartsSublayers = createSubLayers(for: lines)
         }
         updateChartSublayers(for: lines)
     }
     
-    func point(from values: (x: Int, y: Int)) -> CGPoint {
+    func point(from values: (x: UInt64, y: UInt64)) -> CGPoint {
         let x: CGFloat = ((CGFloat(values.x - minX)) * bounds.width) / CGFloat(sizeX)
         let y: CGFloat = (bounds.height - (CGFloat(values.y - minY) * bounds.height) / CGFloat(sizeY))
         return CGPoint(x: x, y: y)

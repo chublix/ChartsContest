@@ -18,11 +18,11 @@ struct JsonChartItem: Decodable {
 
 struct JsonValue: Decodable {
     let string: String?
-    let int: Int?
+    let int: UInt64?
     
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         self.string = try? container.decode(String.self)
-        self.int = try? container.decode(Int.self)
+        self.int = try? container.decode(UInt64.self)
     }
 }

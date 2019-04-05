@@ -41,10 +41,29 @@ class ChartSliderViewController: UIViewController {
     
     var colors: Colors!
     
+    private lazy var timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(handler), userInfo: nil, repeats: true)
+    private var poffset: CGFloat = 3
+    
+    @objc private func handler() {
+//        DispatchQueue.global().async {
+            if self.thumbView.frame.origin.x > self.chartView.bounds.width - self.thumbView.frame.width || self.thumbView.frame.origin.x <= 0 {
+                self.poffset = -self.poffset
+            }
+//            DispatchQueue.main.async {
+                self.thumbView.frame.origin.x += self.poffset
+                self.updateMaskLayerPath()
+                self.updateSelectedRangeValues()
+//            }
+//        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         chartView.chart = chart
         setup()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.timer.fire()
+        }
     }
     
     override func viewDidLayoutSubviews() {

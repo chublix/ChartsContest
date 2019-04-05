@@ -27,7 +27,8 @@ struct ChartsContainer {
                 let values = column.compactMap { $0.int }
                 return Line(name: name, values: values, color: color)
             }
-            let xAxisValues = item.columns.first { $0.first?.string == "x" }?.compactMap { $0.int } ?? []
+            let xAxisValuesColumn = item.columns.first { $0.first?.string == "x" }
+            let xAxisValues = xAxisValuesColumn?.compactMap { $0.int } ?? []
             return Chart(lines: lines, x: xAxisValues)
         }
         self.init(charts: charts)
@@ -37,18 +38,18 @@ struct ChartsContainer {
 
 struct Chart {
     var lines: [Line]
-    let x: [Int]
+    let x: [UInt64]
 }
 
 
 struct Line {
     
     let name: String
-    let values: [Int]
+    let values: [UInt64]
     let color: UIColor
     var enabled: Bool = true
     
-    init(name: String, values: [Int], color: UIColor) {
+    init(name: String, values: [UInt64], color: UIColor) {
         self.name = name
         self.values = values
         self.color = color
